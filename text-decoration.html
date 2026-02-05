@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Decoration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .demo {
+            padding: 20px;
+            border: 2px dashed #ddd;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .demo h1 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .demo h2 {
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .demo h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .demo p {
+            margin: 10px 0;
+        }
+
+        .demo-overline {
+            text-decoration-line: overline;
+            text-decoration-color: red;
+        }
+
+        .demo-line-through {
+            text-decoration-line: line-through;
+            text-decoration-color: blue;
+        }
+
+        .demo-underline {
+            text-decoration-line: underline;
+            text-decoration-color: green;
+        }
+
+        .demo-multiple {
+            text-decoration-line: overline underline;
+            text-decoration-color: purple;
+        }
+
+        .demo-solid {
+            text-decoration: underline solid;
+        }
+
+        .demo-double {
+            text-decoration: underline double;
+        }
+
+        .demo-dotted {
+            text-decoration: underline dotted;
+        }
+
+        .demo-dashed {
+            text-decoration: underline dashed;
+        }
+
+        .demo-wavy {
+            text-decoration: underline wavy;
+        }
+
+        .demo-wavy-red {
+            text-decoration: underline red wavy;
+        }
+
+        .demo-thick-auto {
+            text-decoration: underline;
+            text-decoration-thickness: auto;
+        }
+
+        .demo-thick-5px {
+            text-decoration: underline;
+            text-decoration-thickness: 5px;
+        }
+
+        .demo-thick-25 {
+            text-decoration: underline;
+            text-decoration-thickness: 25%;
+        }
+
+        .demo-link {
+            text-decoration: none;
+            color: #667eea;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="text-alignment.html">← Previous: Text Alignment</a>
+            <a href="css-fonts.html">Next: CSS Fonts →</a>
+        </div>
+
+        <div class="header">
+            <h1>CSS Text Decoration</h1>
+        </div>
+
+        <h2>What is Text Decoration?</h2>
+        <p>The CSS <strong>text-decoration</strong> property is used to control the appearance of decorative lines on text.</p>
+
+        <p>It is a shorthand property for:</p>
+        <ul>
+            <li>text-decoration-line</li>
+            <li>text-decoration-color</li>
+            <li>text-decoration-style</li>
+            <li>text-decoration-thickness</li>
+        </ul>
+
+        <h2>Add a Decoration Line to Text</h2>
+        <p>The <strong>text-decoration-line</strong> property sets the type of decoration line added to the text.</p>
+
+        <p>This property can have one or more of the following values:</p>
+        <ul>
+            <li><strong>none</strong> - Default value. Displays no decoration line</li>
+            <li><strong>underline</strong> - The decoration line is displayed under the text</li>
+            <li><strong>overline</strong> - The decoration line is displayed over the text</li>
+            <li><strong>line-through</strong> - The decoration line is displayed through the text</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> You can combine multiple values, like overline and underline to display lines both over and under a text.
+        </div>
+
+        <div class="example">
+            <h4>Example: Different Decoration Lines</h4>
+            <div class="code">h1 {
+  text-decoration-line: overline;
+}
+
+h2 {
+  text-decoration-line: line-through;
+}
+
+h3 {
+  text-decoration-line: underline;
+}
+
+p {
+  text-decoration-line: overline underline;
+}</div>
+            <div class="demo">
+                <h1 class="demo-overline">This heading has an overline</h1>
+                <h2 class="demo-line-through">This heading has a line-through</h2>
+                <h3 class="demo-underline">This heading has an underline</h3>
+                <p class="demo-multiple">This paragraph has overline and underline</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Note:</strong> It is not recommended to underline text that is not a link, as this often confuses the reader!
+        </div>
+
+        <h2>Specify a Color for the Decoration Line</h2>
+        <p>The <strong>text-decoration-color</strong> property is used to set the color of the decoration line.</p>
+
+        <div class="example">
+            <h4>Example: Decoration Line Colors</h4>
+            <div class="code">h1 {
+  text-decoration-line: overline;
+  text-decoration-color: red;
+}
+
+h2 {
+  text-decoration-line: line-through;
+  text-decoration-color: blue;
+}
+
+h3 {
+  text-decoration-line: underline;
+  text-decoration-color: green;
+}</div>
+            <div class="demo">
+                <h1 class="demo-overline">Red overline</h1>
+                <h2 class="demo-line-through">Blue line-through</h2>
+                <h3 class="demo-underline">Green underline</h3>
+            </div>
+        </div>
+
+        <h2>Specify a Style for the Decoration Line</h2>
+        <p>The <strong>text-decoration-style</strong> property sets the style of the decoration line.</p>
+
+        <p>This property can have one of the following values:</p>
+        <ul>
+            <li><strong>solid</strong> - Default value. Displays the line as a single line</li>
+            <li><strong>double</strong> - Displays the line as a double line</li>
+            <li><strong>dotted</strong> - Displays the line as a dotted line</li>
+            <li><strong>dashed</strong> - Displays the line as a dashed line</li>
+            <li><strong>wavy</strong> - Displays the line as a wavy line</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Different Decoration Styles</h4>
+            <div class="code">h1 {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+}
+
+h2 {
+  text-decoration-line: underline;
+  text-decoration-style: double;
+}
+
+h3 {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+p.dashed {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+}
+
+p.wavy {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}</div>
+            <div class="demo">
+                <h1 class="demo-solid">Solid underline</h1>
+                <h2 class="demo-double">Double underline</h2>
+                <h3 class="demo-dotted">Dotted underline</h3>
+                <p class="demo-dashed">Dashed underline</p>
+                <p class="demo-wavy">Wavy underline</p>
+                <p class="demo-wavy-red">Red wavy underline</p>
+            </div>
+        </div>
+
+        <h2>Specify the Thickness for the Decoration Line</h2>
+        <p>The <strong>text-decoration-thickness</strong> property is used to set the thickness of the decoration line.</p>
+
+        <div class="example">
+            <h4>Example: Different Decoration Thickness</h4>
+            <div class="code">h1 {
+  text-decoration-line: underline;
+  text-decoration-thickness: auto;
+}
+
+h2 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 5px;
+}
+
+h3 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 25%;
+}</div>
+            <div class="demo">
+                <h1 class="demo-thick-auto">Auto thickness underline</h1>
+                <h2 class="demo-thick-5px">5px thick underline</h2>
+                <h3 class="demo-thick-25">25% thick underline</h3>
+            </div>
+        </div>
+
+        <h2>The Shorthand Property</h2>
+        <p>The CSS <strong>text-decoration</strong> property is a shorthand property for:</p>
+        <ul>
+            <li>text-decoration-line (required)</li>
+            <li>text-decoration-color (optional)</li>
+            <li>text-decoration-style (optional)</li>
+            <li>text-decoration-thickness (optional)</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Shorthand Property</h4>
+            <div class="code">h1 {
+  text-decoration: underline;
+}
+
+h2 {
+  text-decoration: underline red;
+}
+
+h3 {
+  text-decoration: underline red double;
+}
+
+p {
+  text-decoration: underline red double 5px;
+}</div>
+        </div>
+
+        <h2>A Small Tip on Links</h2>
+        <p>All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The <strong>text-decoration: none;</strong> is used to remove the underline from links.</p>
+
+        <div class="example">
+            <h4>Example: Removing Link Underline</h4>
+            <div class="code">a {
+  text-decoration: none;
+}</div>
+            <div class="demo">
+                <p>Normal link: <a href="#">Click here</a></p>
+                <p>Link without underline: <a href="#" class="demo-link">Click here</a></p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> Drag and drop the correct value to remove the default underline from links.</p>
+            <div class="code">a {
+  text-decoration: none;
+}</div>
+            <br>
+            <p><strong>Question 2:</strong> Which property sets the style of the text decoration line (solid, dotted, wavy)?</p>
+            <ul>
+                <li>text-decoration-line</li>
+                <li>text-decoration-color</li>
+                <li><strong>text-decoration-style ✓</strong></li>
+                <li>text-decoration-thickness</li>
+            </ul>
+        </div>
+
+        <h2>All CSS Text Decoration Properties</h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>text-decoration</td>
+                <td>Shorthand property for all text-decoration properties</td>
+            </tr>
+            <tr>
+                <td>text-decoration-line</td>
+                <td>Specifies the type of line (underline, overline, line-through)</td>
+            </tr>
+            <tr>
+                <td>text-decoration-color</td>
+                <td>Specifies the color of the decoration line</td>
+            </tr>
+            <tr>
+                <td>text-decoration-style</td>
+                <td>Specifies the style of the line (solid, double, dotted, dashed, wavy)</td>
+            </tr>
+            <tr>
+                <td>text-decoration-thickness</td>
+                <td>Specifies the thickness of the decoration line</td>
+            </tr>
+        </table>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="text-alignment.html">← Previous: Text Alignment</a>
+            <a href="css-fonts.html">Next: CSS Fonts →</a>
+        </div>
+    </div>
+</body>
+</html>

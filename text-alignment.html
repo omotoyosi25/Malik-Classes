@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Alignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .demo {
+            padding: 20px;
+            border: 2px dashed #ddd;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .demo-left {
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .demo-center {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .demo-right {
+            text-align: right;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .demo-justify {
+            text-align: justify;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .vertical-demo {
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            line-height: 100px;
+        }
+
+        .vertical-demo img {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="text-color.html">← Previous: Text Color</a>
+            <a href="text-decoration.html">Next: Text Decoration →</a>
+        </div>
+
+        <div class="header">
+            <h1>CSS Text Alignment</h1>
+        </div>
+
+        <h2>The text-align Property</h2>
+        <p>The <strong>text-align</strong> property is used to set the horizontal alignment of a text.</p>
+
+        <p>This property can have one of the following values:</p>
+        <ul>
+            <li><strong>left</strong> - Aligns the text to the left</li>
+            <li><strong>right</strong> - Aligns the text to the right</li>
+            <li><strong>center</strong> - Centers the text</li>
+            <li><strong>justify</strong> - Stretches the lines so that each line has equal width</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Different Text Alignments</h4>
+            <div class="code">h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}</div>
+            <div class="demo">
+                <div class="demo-left">
+                    <h2>Left aligned heading</h2>
+                </div>
+                <div class="demo-center">
+                    <h1>Center aligned heading</h1>
+                </div>
+                <div class="demo-right">
+                    <h3>Right aligned heading</h3>
+                </div>
+            </div>
+        </div>
+
+        <h2>Text Align Justify</h2>
+        <p>When the text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers).</p>
+
+        <div class="example">
+            <h4>Example: Justify Alignment</h4>
+            <div class="code">div {
+  text-align: justify;
+}</div>
+            <div class="demo">
+                <div class="demo-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. When text-align is set to justify, each line is stretched so that every line has equal width, and the left and right margins are straight. This creates a clean, professional look similar to newspapers and magazines.
+                </div>
+            </div>
+        </div>
+
+        <h2>Text Align Last</h2>
+        <p>The <strong>text-align-last</strong> property specifies how to align the last line of a text.</p>
+        
+        <p>This property can have the following values:</p>
+        <ul>
+            <li><strong>auto</strong> - Default. The last line is justified and aligned left</li>
+            <li><strong>left</strong> - The last line is aligned to the left</li>
+            <li><strong>right</strong> - The last line is aligned to the right</li>
+            <li><strong>center</strong> - The last line is center-aligned</li>
+            <li><strong>justify</strong> - The last line is justified</li>
+        </ul>
+
+        <h2>Vertical Alignment</h2>
+        <p>The <strong>vertical-align</strong> property sets the vertical alignment of an element.</p>
+
+        <p>Common values include:</p>
+        <ul>
+            <li><strong>baseline</strong> - Default. Aligned with the baseline of the parent</li>
+            <li><strong>top</strong> - Aligned with the top of the tallest element on the line</li>
+            <li><strong>middle</strong> - Placed in the middle of the parent element</li>
+            <li><strong>bottom</strong> - Aligned with the lowest element on the line</li>
+            <li><strong>sub</strong> - Aligned with subscript baseline</li>
+            <li><strong>super</strong> - Aligned with superscript baseline</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Vertical Alignment</h4>
+            <div class="code">img.top {
+  vertical-align: top;
+}
+
+img.middle {
+  vertical-align: middle;
+}
+
+img.bottom {
+  vertical-align: bottom;
+}</div>
+        </div>
+
+        <h2>Text Direction</h2>
+        <p>The <strong>direction</strong> property specifies the text direction/writing direction within a block-level element.</p>
+
+        <div class="info-box">
+            <strong>Tip:</strong> Use the direction property together with the unicode-bidi property to set or return whether the text should be overridden to support multiple languages in the same document.
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> Which property is used to set the horizontal alignment of text in CSS?</p>
+            <ul>
+                <li><strong>text-align ✓</strong></li>
+                <li>direction</li>
+                <li>unicode-bidi</li>
+                <li>horizontal-align</li>
+                <li>vertical-align</li>
+            </ul>
+        </div>
+
+        <h2>CSS Text Alignment Properties</h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>text-align</td>
+                <td>Specifies the horizontal alignment of text</td>
+            </tr>
+            <tr>
+                <td>text-align-last</td>
+                <td>Specifies how to align the last line of a text</td>
+            </tr>
+            <tr>
+                <td>direction</td>
+                <td>Specifies the text direction/writing direction</td>
+            </tr>
+            <tr>
+                <td>unicode-bidi</td>
+                <td>Used with direction property for multiple languages</td>
+            </tr>
+            <tr>
+                <td>vertical-align</td>
+                <td>Sets the vertical alignment of an element</td>
+            </tr>
+        </table>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="text-color.html">← Previous: Text Color</a>
+            <a href="text-decoration.html">Next: Text Decoration →</a>
+        </div>
+    </div>
+</body>
+</html>

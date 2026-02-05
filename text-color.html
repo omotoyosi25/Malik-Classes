@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Color</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .demo {
+            padding: 20px;
+            border: 2px dashed #ddd;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .demo h1 {
+            color: green;
+        }
+
+        .demo h2 {
+            color: red;
+        }
+
+        .demo p {
+            color: blue;
+        }
+
+        .demo-contrast {
+            margin: 15px 0;
+        }
+
+        .demo-contrast .good {
+            background-color: white;
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .demo-contrast .bad {
+            background-color: lightgrey;
+            color: grey;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">← Back to Topics</a>
+            <a href="text-alignment.html">Next: Text Alignment →</a>
+        </div>
+
+        <div class="header">
+            <h1>CSS Text Color</h1>
+        </div>
+
+        <h2>What is the color property?</h2>
+        <p>The <strong>color</strong> property is used to set the color of the text. This is one of the most basic and commonly used CSS properties.</p>
+
+        <h2>How to Specify Colors</h2>
+        <p>The color can be specified in three main ways:</p>
+        <ul>
+            <li><strong>Color name</strong> - like "red", "blue", "green"</li>
+            <li><strong>HEX value</strong> - like "#ff0000", "#0000ff"</li>
+            <li><strong>RGB value</strong> - like "rgb(255, 0, 0)"</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Basic Text Colors</h4>
+            <div class="code">body {
+  color: blue;
+}
+
+h1 {
+  color: green;
+}
+
+h2 {
+  color: red;
+}</div>
+            <div class="demo">
+                <p>This is body text in blue color</p>
+                <h1>This is an h1 heading in green</h1>
+                <h2>This is an h2 heading in red</h2>
+            </div>
+        </div>
+
+        <h2>Text Color and Background Color</h2>
+        <p>You can combine text color with background color to create various designs. However, always ensure good contrast for readability!</p>
+
+        <div class="example">
+            <h4>Example: Text and Background Colors</h4>
+            <div class="code">body {
+  background-color: lightgrey;
+  color: blue;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+div {
+  background-color: blue;
+  color: white;
+}</div>
+        </div>
+
+        <div class="info-box">
+            <strong>Important:</strong> High contrast is very important for people with vision problems. Always ensure that the contrast between the text color and the background color is good!
+        </div>
+
+        <div class="example">
+            <h4>Good vs Bad Contrast</h4>
+            <div class="demo-contrast">
+                <div class="good">
+                    ✓ Good contrast: Black text on white background is easy to read
+                </div>
+                <div class="bad">
+                    ✗ Bad contrast: Grey text on light grey background is hard to read
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> Which property is used to set the color of the text in CSS?</p>
+            <ul>
+                <li>background-color</li>
+                <li>text-color</li>
+                <li><strong>color ✓</strong></li>
+                <li>font-color</li>
+            </ul>
+        </div>
+
+        <h2>CSS Text Color Property</h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Specifies the color of text</td>
+            </tr>
+        </table>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="index.html">← Back to Topics</a>
+            <a href="text-alignment.html">Next: Text Alignment →</a>
+        </div>
+    </div>
+</body>
+</html>

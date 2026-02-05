@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Fonts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .demo {
+            padding: 20px;
+            border: 2px dashed #ddd;
+            margin: 15px 0;
+            background: white;
+        }
+
+        .font-serif {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .font-sans-serif {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .font-monospace {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .font-cursive {
+            font-family: "Brush Script MT", cursive;
+        }
+
+        .font-40px {
+            font-size: 40px;
+        }
+
+        .font-30px {
+            font-size: 30px;
+        }
+
+        .font-16px {
+            font-size: 16px;
+        }
+
+        .font-2-5em {
+            font-size: 2.5em;
+        }
+
+        .font-1-875em {
+            font-size: 1.875em;
+        }
+
+        .font-1em {
+            font-size: 1em;
+        }
+
+        .font-normal {
+            font-style: normal;
+        }
+
+        .font-italic {
+            font-style: italic;
+        }
+
+        .font-oblique {
+            font-style: oblique;
+        }
+
+        .font-weight-normal {
+            font-weight: normal;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        .font-weight-lighter {
+            font-weight: lighter;
+        }
+
+        .font-weight-900 {
+            font-weight: 900;
+        }
+
+        .font-variant-normal {
+            font-variant: normal;
+        }
+
+        .font-variant-small-caps {
+            font-variant: small-caps;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        ol {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .font-sample {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="text-decoration.html">← Previous: Text Decoration</a>
+            <a href="index.html">Back to Topics</a>
+        </div>
+
+        <div class="header">
+            <h1>CSS Fonts</h1>
+        </div>
+
+        <h2>Font Selection is Important</h2>
+        <p>Choosing the right font has a huge impact on how the readers experience a website.</p>
+        <p>The right font can create a strong identity for your brand.</p>
+        <p>Choosing a font that is easy to read is important. It is also important to choose a good color and size for your font.</p>
+
+        <h2>The CSS font-family Property</h2>
+        <p>The CSS <strong>font-family</strong> property specifies the font for an element.</p>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> The font-family property should hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font. The font names should be separated with a comma.
+        </div>
+
+        <p>Always start with the font you want, and always end with a generic family, to let the browser pick a similar font in the generic family, if no other fonts are available.</p>
+
+        <div class="info-box">
+            <strong>Note:</strong> If the font name is more than one word, it must be in quotation marks, like: "Times New Roman".
+        </div>
+
+        <div class="example">
+            <h4>Example: Different Font Families</h4>
+            <div class="code">.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.p2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+  font-family: "Courier New", Courier, monospace;
+}</div>
+            <div class="demo">
+                <p class="font-serif">This is Times New Roman (serif)</p>
+                <p class="font-sans-serif">This is Arial (sans-serif)</p>
+                <p class="font-monospace">This is Courier New (monospace)</p>
+            </div>
+        </div>
+
+        <h2>CSS Generic Font Families</h2>
+        <p>In CSS, there are five generic font families:</p>
+        <ol>
+            <li><strong>Serif fonts</strong> - have a small stroke at the edges of each letter. They create a sense of formality and elegance.</li>
+            <li><strong>Sans-serif fonts</strong> - have clean lines (no small strokes attached). They create a modern and minimalistic look.</li>
+            <li><strong>Monospace fonts</strong> - here all the letters have the same fixed width. They create a mechanical look.</li>
+            <li><strong>Cursive fonts</strong> - imitate human handwriting.</li>
+            <li><strong>Fantasy fonts</strong> - are decorative/playful fonts.</li>
+        </ol>
+
+        <div class="info-box">
+            <strong>Note:</strong> On computer screens, sans-serif fonts are considered easier to read than serif fonts.
+        </div>
+
+        <h2>Web Safe Fonts</h2>
+        <p>Web safe fonts are fonts that are universally installed across all browsers and devices.</p>
+
+        <p>However, there are no 100% completely web safe fonts. There is always a chance that a font is not found or is not installed properly.</p>
+
+        <p>Therefore, it is very important to always use fallback fonts.</p>
+
+        <h3>Best Web Safe Fonts for HTML and CSS</h3>
+        <ul>
+            <li>Arial (sans-serif)</li>
+            <li>Verdana (sans-serif)</li>
+            <li>Tahoma (sans-serif)</li>
+            <li>Trebuchet MS (sans-serif)</li>
+            <li>Times New Roman (serif)</li>
+            <li>Georgia (serif)</li>
+            <li>Garamond (serif)</li>
+            <li>Courier New (monospace)</li>
+            <li>Brush Script MT (cursive)</li>
+        </ul>
+
+        <div class="example">
+            <h4>Font Examples</h4>
+            <div class="demo">
+                <div class="font-sample" style="font-family: Arial, sans-serif;">
+                    <strong>Arial (sans-serif)</strong><br>
+                    Lorem ipsum dolor sit amet. 0123456789
+                </div>
+                <div class="font-sample" style="font-family: 'Times New Roman', serif;">
+                    <strong>Times New Roman (serif)</strong><br>
+                    Lorem ipsum dolor sit amet. 0123456789
+                </div>
+                <div class="font-sample" style="font-family: Georgia, serif;">
+                    <strong>Georgia (serif)</strong><br>
+                    Lorem ipsum dolor sit amet. 0123456789
+                </div>
+                <div class="font-sample" style="font-family: 'Courier New', monospace;">
+                    <strong>Courier New (monospace)</strong><br>
+                    Lorem ipsum dolor sit amet. 0123456789
+                </div>
+            </div>
+        </div>
+
+        <h2>CSS Font Size</h2>
+        <p>The CSS <strong>font-size</strong> property is used to specify the size of the text/font.</p>
+
+        <p>Being able to manage the text size is very important in web design.</p>
+
+        <div class="info-box">
+            <strong>Important:</strong> You should not use font size adjustments to make paragraphs look like headings, or headings look like paragraphs. Always use the proper HTML tags!
+        </div>
+
+        <h3>Absolute Sizes</h3>
+        <ul>
+            <li><strong>px</strong>: Pixels offers fixed and precise control over the font size.</li>
+            <li><strong>xx-small, x-small, small, medium, large, x-large, xx-large</strong>: These keywords have a predefined set of sizes in browsers.</li>
+        </ul>
+
+        <h3>Relative Sizes</h3>
+        <ul>
+            <li><strong>em</strong>: This unit is relative to the font size of the parent element.</li>
+            <li><strong>rem</strong>: This unit is relative to the font size of the root HTML element.</li>
+            <li><strong>%</strong>: This unit is relative to the font size of the parent element</li>
+            <li><strong>smaller and larger</strong>: These units adjust the font size relative to the parent element.</li>
+        </ul>
+
+        <h3>How to Pick the Right Unit?</h3>
+        <ul>
+            <li>For fixed and precise control, <strong>px</strong> can be used.</li>
+            <li>With px, the web page will not scale well on different screen sizes or with user preferences.</li>
+            <li>For scalable web designs, use <strong>em</strong> or <strong>rem</strong>; they allow users to adjust text size in their browser settings.</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Set Font Size With Pixels</h4>
+            <div class="code">h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 16px;
+}</div>
+            <div class="demo">
+                <h1 class="font-40px">40px heading</h1>
+                <h2 class="font-30px">30px heading</h2>
+                <p class="font-16px">16px paragraph</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example: Set Font Size With Em</h4>
+            <div class="code">body {
+  font-size: 16px; /* Base font size */
+}
+
+h1 {
+  font-size: 2.5em; /* 2.5 * 16 = 40px */
+}
+
+h2 {
+  font-size: 1.875em; /* 1.875 * 16 = 30px */
+}
+
+p {
+  font-size: 1em; /* 1 * 16 = 16px */
+}</div>
+        </div>
+
+        <div class="example">
+            <h4>Example: Set Font Size With Rem</h4>
+            <div class="code">html {
+  font-size: 16px; /* Set the root font size */
+}
+
+h1 {
+  font-size: 2.5rem; /* 2.5 * 16 = 40px */
+}
+
+h2 {
+  font-size: 1.875rem; /* 1.875 * 16 = 30px */
+}
+
+p {
+  font-size: 1rem; /* 1 * 16 = 16px */
+}</div>
+        </div>
+
+        <h2>CSS Font Style</h2>
+        <p>The CSS <strong>font-style</strong> property specifies the font style for a text.</p>
+
+        <p>This property can have one of the following values:</p>
+        <ul>
+            <li><strong>normal</strong> - The text is shown normally</li>
+            <li><strong>italic</strong> - The text is shown in italics</li>
+            <li><strong>oblique</strong> - The text is "leaning" (oblique is very similar to italic)</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Font Styles</h4>
+            <div class="code">p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}</div>
+            <div class="demo">
+                <p class="font-normal">This is normal text</p>
+                <p class="font-italic">This is italic text</p>
+                <p class="font-oblique">This is oblique text</p>
+            </div>
+        </div>
+
+        <h2>CSS Font Weight</h2>
+        <p>The CSS <strong>font-weight</strong> property specifies how thick or thin characters in text should be displayed.</p>
+
+        <p>This property can have one of the following values:</p>
+        <ul>
+            <li><strong>normal</strong> - This is default. Defines normal characters</li>
+            <li><strong>bold</strong> - Defines thick characters</li>
+            <li><strong>bolder</strong> - Defines thicker characters</li>
+            <li><strong>lighter</strong> - Defines lighter characters</li>
+            <li><strong>100-900</strong> - Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Font Weights</h4>
+            <div class="code">p.normal {
+  font-weight: normal;
+}
+
+p.light {
+  font-weight: lighter;
+}
+
+p.thick {
+  font-weight: bold;
+}
+
+p.thicker {
+  font-weight: 900;
+}</div>
+            <div class="demo">
+                <p class="font-weight-normal">Normal weight text</p>
+                <p class="font-weight-lighter">Lighter weight text</p>
+                <p class="font-weight-bold">Bold weight text</p>
+                <p class="font-weight-900">900 weight text</p>
+            </div>
+        </div>
+
+        <h2>CSS Font Variant</h2>
+        <p>The CSS <strong>font-variant</strong> property specifies whether or not a text should be displayed in a small-caps font.</p>
+
+        <p>In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.</p>
+
+        <div class="example">
+            <h4>Example: Font Variant</h4>
+            <div class="code">p.normal {
+  font-variant: normal;
+}
+
+p.small {
+  font-variant: small-caps;
+}</div>
+            <div class="demo">
+                <p class="font-variant-normal">This is Normal Text</p>
+                <p class="font-variant-small-caps">This is Small-Caps Text</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 1</h3>
+            <p><strong>Question:</strong> Which font is this?</p>
+            <p style="font-family: 'Courier New', monospace;">Lorem ipsum dolor sit amet</p>
+            <ul>
+                <li>Arial</li>
+                <li><strong>Courier New ✓</strong></li>
+                <li>Times New Roman</li>
+                <li>Georgia</li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2</h3>
+            <p><strong>Question:</strong> Drag and drop the correct values to make the font of p bold.</p>
+            <div class="code">p {
+  font-weight: bold;
+}</div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3</h3>
+            <p><strong>Question:</strong> Set the font size of h1 to 60px.</p>
+            <div class="code">h1 {
+  font-size: 60px;
+}</div>
+        </div>
+
+        <h2>All CSS Font Properties</h2>
+        <table>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>font-family</td>
+                <td>Specifies the font for an element</td>
+            </tr>
+            <tr>
+                <td>font-size</td>
+                <td>Specifies the size of the font</td>
+            </tr>
+            <tr>
+                <td>font-style</td>
+                <td>Specifies the font style (normal, italic, oblique)</td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td>Specifies how thick or thin characters should be displayed</td>
+            </tr>
+            <tr>
+                <td>font-variant</td>
+                <td>Specifies whether text should be displayed in small-caps</td>
+            </tr>
+        </table>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="text-decoration.html">← Previous: Text Decoration</a>
+            <a href="index.html">Back to Topics</a>
+        </div>
+    </div>
+</body>
+</html>

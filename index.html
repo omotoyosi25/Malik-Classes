@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text & Font Tutorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .topics-list {
+            list-style: none;
+        }
+
+        .topics-list li {
+            margin-bottom: 15px;
+        }
+
+        .topic-link {
+            display: block;
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .topic-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .topic-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+
+        .items {
+            width: 100px;
+            height: 100px;
+            background-color: #667eea;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS Tutorial</h1>
+        <p class="subtitle">Learn CSS Text & Font Properties</p>
+
+
+
+        <h1>
+            This is my <span>name</span>
+        </h1>
+
+        <div class="container2">
+            <div class="items"></div>
+            <div class="items"></div>
+            <div class="items"></div>
+        </div>
+
+
+        <ul class="topics-list">
+            <li>
+                <a href="text-color.html" class="topic-link">
+                    <span class="topic-number">1</span>
+                    CSS Text Color
+                </a>
+            </li>
+            <li>
+                <a href="text-alignment.html" class="topic-link">
+                    <span class="topic-number">2</span>
+                    CSS Text Alignment
+                </a>
+            </li>
+            <li>
+                <a href="text-decoration.html" class="topic-link">
+                    <span class="topic-number">3</span>
+                    CSS Text Decoration
+                </a>
+            </li>
+            <li>
+                <a href="css-fonts.html" class="topic-link">
+                    <span class="topic-number">4</span>
+                    CSS Fonts
+                </a>
+            </li>
+        </ul>
+
+        <p class="footer">Click on any topic to begin learning!</p>
+    </div>
+</body>
+
+</html>
