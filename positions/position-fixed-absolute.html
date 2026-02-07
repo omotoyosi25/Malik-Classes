@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed & Absolute Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        .visual-demo {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fafafa;
+            position: relative;
+            min-height: 250px;
+        }
+
+        .demo-fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            padding: 15px;
+            background: #ff9800;
+            color: white;
+            border: 3px solid #f57c00;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .demo-relative-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 3px solid green;
+            background: #e8f5e9;
+            padding: 10px;
+        }
+
+        .demo-absolute-box {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid red;
+            background: #ffebee;
+            padding: 10px;
+        }
+
+        .image-demo {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .text-overlay {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .centered {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="position-static-relative.html">&larr; Previous: Static & Relative</a>
+            <a href="position-sticky.html">Next: Sticky Positioning &rarr;</a>
+        </div>
+
+        <div class="header">
+            <h1>Fixed & Absolute Positioning</h1>
+        </div>
+
+        <h2>CSS position: fixed</h2>
+        <p>An element with <code>position: fixed;</code> is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled.</p>
+
+        <p>Key characteristics of fixed positioning:</p>
+        <ul>
+            <li>Positioned relative to the browser viewport</li>
+            <li>Does NOT move when the page is scrolled</li>
+            <li>Removed from the normal document flow</li>
+            <li>Does NOT leave a gap in the page where it would normally be</li>
+            <li>Uses top, right, bottom, left to set its position</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Fixed Position</h4>
+            <div class="code">div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}</div>
+            <div class="info-box">
+                <strong>Live Demo:</strong> Look at the bottom-right corner of your screen. There's a fixed orange box that stays in place even when you scroll this page!
+            </div>
+        </div>
+
+        <div class="demo-fixed-box">
+            This box has position: fixed and stays here even when you scroll!
+        </div>
+
+        <h3>Common Uses for Fixed Positioning</h3>
+        <ul>
+            <li>Fixed navigation bars at the top of the page</li>
+            <li>Floating action buttons</li>
+            <li>Chat widgets</li>
+            <li>Cookie consent banners</li>
+            <li>Back to top buttons</li>
+        </ul>
+
+        <h2>CSS position: absolute</h2>
+        <p>An element with <code>position: absolute;</code> is positioned relative to the nearest positioned ancestor (an ancestor with position set to anything other than static).</p>
+
+        <p>Key characteristics of absolute positioning:</p>
+        <ul>
+            <li>Positioned relative to its nearest positioned ancestor</li>
+            <li>If no positioned ancestor exists, it uses the document body</li>
+            <li>Removed from the normal document flow</li>
+            <li>Can overlap other elements</li>
+            <li>Moves with page scrolling (unless ancestor is fixed)</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Important:</strong> Absolute positioned elements are removed from the normal document flow, and can overlap other elements. Other elements behave as if the absolutely positioned element doesn't exist.
+        </div>
+
+        <div class="example">
+            <h4>Example: Absolute Position with Relative Parent</h4>
+            <div class="code">div.relative {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid green;
+}
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+}</div>
+            <div class="visual-demo">
+                <div class="demo-relative-container">
+                    This &lt;div&gt; element has position: relative;
+                    <div class="demo-absolute-box">
+                        This &lt;div&gt; element has position: absolute;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Positioning Text On an Image</h2>
+        <p>A very common use case for absolute positioning is placing text overlays on images. The image container is set to <code>position: relative;</code> and the text elements are set to <code>position: absolute;</code></p>
+
+        <div class="example">
+            <h4>Example: Text Overlays on Image</h4>
+            <div class="code">.image-container {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+}
+
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; }
+.bottom-left { bottom: 10px; left: 10px; }
+.bottom-right { bottom: 10px; right: 10px; }
+.centered { 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}</div>
+            <div class="visual-demo" style="padding: 0;">
+                <div class="image-demo">
+                    <div class="text-overlay top-left">Top Left</div>
+                    <div class="text-overlay top-right">Top Right</div>
+                    <div class="text-overlay bottom-left">Bottom Left</div>
+                    <div class="text-overlay bottom-right">Bottom Right</div>
+                    <div class="text-overlay centered">Centered</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Understanding Positioned Ancestors</h2>
+        <p>For absolute positioning, a "positioned ancestor" is any parent, grandparent, or higher-level ancestor element that has its position property set to relative, absolute, fixed, or sticky (anything except static).</p>
+
+        <div class="info-box">
+            <strong>Pro Tip:</strong> The most common pattern is to set a parent container to <code>position: relative;</code> (without any offset properties) just to create a positioning context for absolutely positioned children.
+        </div>
+
+        <h2>Comparison: Fixed vs Absolute</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>position: fixed</th>
+                <th>position: absolute</th>
+            </tr>
+            <tr>
+                <td>Positioned relative to</td>
+                <td>Viewport</td>
+                <td>Nearest positioned ancestor</td>
+            </tr>
+            <tr>
+                <td>Affected by scrolling?</td>
+                <td>No</td>
+                <td>Yes (moves with ancestor)</td>
+            </tr>
+            <tr>
+                <td>In document flow?</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Takes up space?</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>Common uses</td>
+                <td>Fixed navbars, modals</td>
+                <td>Dropdowns, tooltips, overlays</td>
+            </tr>
+        </table>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> Which position value makes an element stay in the same place even if the page is scrolled?</p>
+            <ul>
+                <li>static</li>
+                <li>relative</li>
+                <li>absolute</li>
+                <li><strong>fixed ✓</strong></li>
+            </ul>
+            <br>
+            <p><strong>Question 2:</strong> An element with position: absolute is positioned relative to:</p>
+            <ul>
+                <li>The viewport</li>
+                <li><strong>The nearest positioned ancestor ✓</strong></li>
+                <li>Its normal position</li>
+                <li>The document body only</li>
+            </ul>
+        </div>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="position-static-relative.html">&larr; Previous: Static & Relative</a>
+            <a href="position-sticky.html">Next: Sticky Positioning &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

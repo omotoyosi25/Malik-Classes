@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Text & Font Tutorial</title>
+    <title>CSS Positioning Tutorial</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Tahoma, sans-serif;
         }
 
         body {
@@ -84,43 +82,71 @@
             font-weight: bold;
         }
 
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
         .footer {
             text-align: center;
             margin-top: 30px;
             color: #666;
             font-size: 0.9em;
         }
-
-
-        .items {
-            width: 100px;
-            height: 100px;
-            background-color: #667eea;
-        }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>CSS Topics</h1>
-        <p class="subtitle">Select a topic to start learning</p>
-
+        <a href="../index.html" class="back-btn">&larr; Back to Topics</a>
+        <h1>CSS Positioning Tutorial</h1>
+        <p class="subtitle">Master CSS Positioning Properties</p>
+        
         <ul class="topics-list">
             <li>
-                <a href="typography/index.html" class="topic-link">
+                <a href="position-intro.html" class="topic-link">
                     <span class="topic-number">1</span>
-                    Typography
+                    Introduction to CSS Positioning
                 </a>
             </li>
             <li>
-                <a href="positions/index.html" class="topic-link">
+                <a href="position-static-relative.html" class="topic-link">
                     <span class="topic-number">2</span>
-                    Positions
+                    Static & Relative Positioning
+                </a>
+            </li>
+            <li>
+                <a href="position-fixed-absolute.html" class="topic-link">
+                    <span class="topic-number">3</span>
+                    Fixed & Absolute Positioning
+                </a>
+            </li>
+            <li>
+                <a href="position-sticky.html" class="topic-link">
+                    <span class="topic-number">4</span>
+                    Sticky Positioning
+                </a>
+            </li>
+            <li>
+                <a href="position-offsets.html" class="topic-link">
+                    <span class="topic-number">5</span>
+                    Position Offsets (top, right, bottom, left)
+                </a>
+            </li>
+            <li>
+                <a href="z-index.html" class="topic-link">
+                    <span class="topic-number">6</span>
+                    Z-Index Property
                 </a>
             </li>
         </ul>
-
     </div>
 </body>
-
 </html>

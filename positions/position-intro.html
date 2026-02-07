@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .visual-demo {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            min-height: 200px;
+        }
+
+        .demo-box {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            border: 3px solid #73AD21;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Topics</a>
+            <a href="position-static-relative.html">Next: Static & Relative &rarr;</a>
+        </div>
+
+        <div class="header">
+            <h1>Introduction to CSS Positioning</h1>
+        </div>
+
+        <h2>What is CSS Positioning?</h2>
+        <p>CSS positioning is about controlling the placement of elements within a web page. With CSS positioning, you can override the normal document flow and place elements exactly where you want them.</p>
+
+        <h2>The CSS position Property</h2>
+        <p>The <strong>position</strong> property specifies the positioning type for an element.</p>
+
+        <p>This property can have one of the following values:</p>
+        <ul>
+            <li><strong>static</strong> - This is default (normal document flow)</li>
+            <li><strong>relative</strong> - Positioned relative to its normal position</li>
+            <li><strong>fixed</strong> - Positioned relative to the viewport</li>
+            <li><strong>absolute</strong> - Positioned relative to the nearest positioned ancestor</li>
+            <li><strong>sticky</strong> - Toggles between relative and fixed based on scroll position</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Important:</strong> Elements are positioned to their final location with the <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> properties. These offset properties only work on positioned elements (elements with position set to something other than static).
+        </div>
+
+        <h2>Understanding the Document Flow</h2>
+        <p>Before learning positioning, it's important to understand the normal document flow:</p>
+        <ul>
+            <li>By default, elements flow from top to bottom</li>
+            <li>Block elements stack vertically</li>
+            <li>Inline elements flow horizontally</li>
+            <li>Elements take up space in the document</li>
+        </ul>
+
+        <p>Positioning allows you to break out of this normal flow and place elements precisely where you want them.</p>
+
+        <h2>Quick Overview of Position Values</h2>
+
+        <div class="example">
+            <h4>position: static</h4>
+            <p>Default positioning. Elements follow the normal document flow. Not affected by top, bottom, left, right properties.</p>
+            <div class="visual-demo">
+                <div class="demo-box">This element has position: static (default)</div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>position: relative</h4>
+            <p>Positioned relative to its normal position. Offset properties move it from where it would normally be.</p>
+        </div>
+
+        <div class="example">
+            <h4>position: fixed</h4>
+            <p>Positioned relative to the browser viewport. Stays in the same place even when scrolling.</p>
+        </div>
+
+        <div class="example">
+            <h4>position: absolute</h4>
+            <p>Positioned relative to the nearest positioned ancestor. Removed from normal document flow.</p>
+        </div>
+
+        <div class="example">
+            <h4>position: sticky</h4>
+            <p>Toggles between relative and fixed positioning based on scroll position.</p>
+        </div>
+
+        <h2>Common Use Cases</h2>
+        <ul>
+            <li><strong>Fixed navigation bars</strong> - Using position: fixed</li>
+            <li><strong>Dropdown menus</strong> - Using position: absolute</li>
+            <li><strong>Modal dialogs/overlays</strong> - Using position: fixed or absolute</li>
+            <li><strong>Sticky headers</strong> - Using position: sticky</li>
+            <li><strong>Tooltips</strong> - Using position: absolute</li>
+            <li><strong>Image overlays</strong> - Using position: absolute</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Start with understanding static and relative positioning, as they form the foundation. Then move on to absolute, fixed, and sticky positioning which build upon these concepts.
+        </div>
+
+        <h2>Position Properties Summary</h2>
+        <table>
+            <tr>
+                <th>Position Value</th>
+                <th>Positioned Relative To</th>
+                <th>Takes Up Space?</th>
+                <th>Affected by Scroll?</th>
+            </tr>
+            <tr>
+                <td>static</td>
+                <td>Normal flow</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>relative</td>
+                <td>Its normal position</td>
+                <td>Yes (original space)</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>fixed</td>
+                <td>Viewport</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>absolute</td>
+                <td>Nearest positioned ancestor</td>
+                <td>No</td>
+                <td>Depends on ancestor</td>
+            </tr>
+            <tr>
+                <td>sticky</td>
+                <td>Viewport (when stuck)</td>
+                <td>Yes (initially)</td>
+                <td>Partially</td>
+            </tr>
+        </table>
+
+        <div class="exercise">
+            <h3>Quick Check</h3>
+            <p><strong>Question:</strong> What is the default value of the position property for HTML elements?</p>
+            <ul>
+                <li>relative</li>
+                <li><strong>static ✓</strong></li>
+                <li>absolute</li>
+                <li>fixed</li>
+            </ul>
+        </div>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="index.html">&larr; Back to Topics</a>
+            <a href="position-static-relative.html">Next: Static & Relative &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

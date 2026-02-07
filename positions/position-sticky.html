@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        .demo-container {
+            border: 2px dashed #ccc;
+            margin: 20px 0;
+            background: #fafafa;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .demo-sticky {
+            position: sticky;
+            top: 0;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: 2px solid #45a049;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .demo-content {
+            padding: 20px;
+            background: white;
+        }
+
+        .demo-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-left: 4px solid #667eea;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-box {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .comparison-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="position-fixed-absolute.html">&larr; Previous: Fixed & Absolute</a>
+            <a href="position-offsets.html">Next: Position Offsets &rarr;</a>
+        </div>
+
+        <div class="header">
+            <h1>Sticky Positioning</h1>
+        </div>
+
+        <h2>CSS position: sticky</h2>
+        <p>An element with <code>position: sticky;</code> toggles between <code>relative</code> and <code>fixed</code> position, depending on the scroll position.</p>
+
+        <p>A sticky element is positioned <strong>relative</strong> until a certain scroll position is reached - then it "sticks" in place (like <code>position: fixed</code>).</p>
+
+        <h2>How Sticky Positioning Works</h2>
+        <p>Sticky positioning behaves in three phases:</p>
+        <ul>
+            <li><strong>Phase 1 (Before threshold):</strong> Acts like <code>position: relative;</code> - stays in normal document flow</li>
+            <li><strong>Phase 2 (At threshold):</strong> "Sticks" to specified position - acts like <code>position: fixed;</code></li>
+            <li><strong>Phase 3 (After parent boundary):</strong> Scrolls away with its parent container</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Important:</strong> You must specify at least one of <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code> properties for sticky positioning to work. This defines the threshold where the element becomes "stuck".
+        </div>
+
+        <div class="example">
+            <h4>Example: Basic Sticky Element</h4>
+            <div class="code">div.sticky {
+  position: sticky;
+  top: 0;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}</div>
+            <p>In this example, when the sticky element reaches the top of the viewport (top: 0), it sticks to that position.</p>
+        </div>
+
+        <h2>Interactive Demo</h2>
+        <p><strong>Try it:</strong> Scroll in the box below to see the sticky header in action!</p>
+
+        <div class="demo-container">
+            <div class="demo-sticky">
+                I'm a Sticky Header! Scroll to see me stick to the top.
+            </div>
+            <div class="demo-content">
+                <div class="demo-section">
+                    <h3>Section 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll down to see the sticky header in action.</p>
+                </div>
+                <div class="demo-section">
+                    <h3>Section 2</h3>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The header should now be stuck at the top.</p>
+                </div>
+                <div class="demo-section">
+                    <h3>Section 3</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Keep scrolling!</p>
+                </div>
+                <div class="demo-section">
+                    <h3>Section 4</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </div>
+                <div class="demo-section">
+                    <h3>Section 5</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                </div>
+                <div class="demo-section">
+                    <h3>Section 6</h3>
+                    <p>When you reach the end of the container, the sticky header will scroll away with its parent.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Common Use Cases for Sticky Positioning</h2>
+
+        <h3>1. Sticky Headers</h3>
+        <p>Navigation bars or section headers that stick to the top when scrolling.</p>
+
+        <h3>2. Sticky Sidebars</h3>
+        <p>Side content (like a table of contents) that stays visible while scrolling main content.</p>
+
+        <h3>3. Sticky Table Headers</h3>
+        <p>Table headers that remain visible when scrolling through long tables.</p>
+
+        <h3>4. Sticky Call-to-Action Buttons</h3>
+        <p>Important buttons that stick in view while users scroll through content.</p>
+
+        <div class="tip-box">
+            <strong>Pro Tip:</strong> Sticky positioning respects parent boundaries. Once the parent container scrolls out of view, the sticky element goes with it. This is different from fixed positioning, which always stays relative to the viewport.
+        </div>
+
+        <h2>Sticky vs Fixed Comparison</h2>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>position: sticky</th>
+                <th>position: fixed</th>
+            </tr>
+            <tr>
+                <td>Initial behavior</td>
+                <td>Acts like relative</td>
+                <td>Always fixed to viewport</td>
+            </tr>
+            <tr>
+                <td>Space in document</td>
+                <td>Takes up space initially</td>
+                <td>Does not take up space</td>
+            </tr>
+            <tr>
+                <td>Scroll behavior</td>
+                <td>Sticks after threshold</td>
+                <td>Always fixed</td>
+            </tr>
+            <tr>
+                <td>Container bound</td>
+                <td>Yes, respects parent boundaries</td>
+                <td>No, always relative to viewport</td>
+            </tr>
+            <tr>
+                <td>Offset property required</td>
+                <td>Yes (top, bottom, left, or right)</td>
+                <td>Optional</td>
+            </tr>
+        </table>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> What is required for position: sticky to work?</p>
+            <ul>
+                <li><strong>At least one of top, bottom, left, or right must be set ✓</strong></li>
+                <li>The element must have a positioned ancestor</li>
+                <li>The element must be inside a fixed container</li>
+                <li>The element must have a specific height</li>
+            </ul>
+            <br>
+            <p><strong>Question 2:</strong> How does sticky positioning differ from fixed positioning?</p>
+            <ul>
+                <li>They work exactly the same way</li>
+                <li>Sticky doesn't work in modern browsers</li>
+                <li><strong>Sticky respects parent boundaries; fixed does not ✓</strong></li>
+                <li>Fixed requires offset properties; sticky does not</li>
+            </ul>
+        </div>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="position-fixed-absolute.html">&larr; Previous: Fixed & Absolute</a>
+            <a href="position-offsets.html">Next: Position Offsets &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static & Relative Positioning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        .visual-demo {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .demo-static {
+            position: static;
+            border: 3px solid #73AD21;
+            padding: 20px;
+            background: #e8f5e9;
+        }
+
+        .demo-relative {
+            position: relative;
+            left: 30px;
+            border: 3px solid #73AD21;
+            padding: 20px;
+            background: #e3f2fd;
+            margin-top: 20px;
+        }
+
+        .demo-box-1,
+        .demo-box-2,
+        .demo-box-3 {
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #333;
+        }
+
+        .demo-box-1 {
+            background: #ffcdd2;
+        }
+
+        .demo-box-2 {
+            background: #c8e6c9;
+            position: relative;
+            left: 30px;
+            top: 10px;
+        }
+
+        .demo-box-3 {
+            background: #bbdefb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="position-intro.html">&larr; Previous: Introduction</a>
+            <a href="position-fixed-absolute.html">Next: Fixed & Absolute &rarr;</a>
+        </div>
+
+        <div class="header">
+            <h1>Static & Relative Positioning</h1>
+        </div>
+
+        <h2>CSS position: static</h2>
+        <p>All HTML elements are positioned <strong>static</strong> by default.</p>
+
+        <p>Static positioned elements:</p>
+        <ul>
+            <li>Follow the normal document flow</li>
+            <li>Are NOT affected by the top, bottom, left, and right properties</li>
+            <li>Are NOT considered "positioned" elements</li>
+            <li>Stack according to their order in the HTML</li>
+        </ul>
+
+        <p>An element with <code>position: static;</code> is always positioned according to the normal flow of the page.</p>
+
+        <div class="example">
+            <h4>Example: Static Position (Default)</h4>
+            <div class="code">div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}</div>
+            <div class="visual-demo">
+                <div class="demo-static">
+                    This &lt;div&gt; element has position: static;
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Note:</strong> Since static is the default position value, you rarely need to explicitly set <code>position: static;</code> unless you're overriding a different position value.
+        </div>
+
+        <h2>CSS position: relative</h2>
+        <p>An element with <code>position: relative;</code> is positioned relative to its normal position in the document flow.</p>
+
+        <p>Key characteristics of relative positioning:</p>
+        <ul>
+            <li>The element remains in the document flow</li>
+            <li>Its original space is preserved (other elements don't move)</li>
+            <li>You can use top, right, bottom, left to offset it from its normal position</li>
+            <li>The element is considered "positioned" (important for absolute positioning)</li>
+        </ul>
+
+        <div class="example">
+            <h4>Example: Relative Position</h4>
+            <div class="code">div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}</div>
+            <div class="visual-demo">
+                <div class="demo-relative">
+                    This &lt;div&gt; has position: relative and is moved 30px to the right from its normal position
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <strong>Important:</strong> Setting the top, right, bottom, and left properties will cause the element to be adjusted away from its normal position. Other content will NOT be adjusted to fit into any gap left by the element.
+        </div>
+
+        <h2>How Other Elements Are Affected</h2>
+        <p>When you use relative positioning, the element moves but its original space remains reserved. Other elements behave as if the relatively positioned element is still in its original location.</p>
+
+        <div class="example">
+            <h4>Example: Multiple Elements with One Relative</h4>
+            <div class="code">.box-1 {
+  background: red;
+}
+
+.box-2 {
+  background: green;
+  position: relative;
+  left: 30px;
+  top: 10px;
+}
+
+.box-3 {
+  background: blue;
+}</div>
+            <div class="visual-demo">
+                <div class="demo-box-1">Box 1 (static)</div>
+                <div class="demo-box-2">Box 2 (relative - moved 30px right, 10px down)</div>
+                <div class="demo-box-3">Box 3 (static - notice it doesn't move up to fill the space)</div>
+            </div>
+        </div>
+
+        <h2>When to Use Relative Positioning</h2>
+
+        <h3>Use Case 1: As a Container for Absolute Elements</h3>
+        <p>Relative positioning is often used to create a positioning context for absolutely positioned child elements (we'll cover this in the next lesson).</p>
+
+        <h3>Use Case 2: Minor Adjustments</h3>
+        <p>Use relative positioning when you need to nudge an element slightly from its normal position without affecting the layout of surrounding elements.</p>
+
+        <h3>Use Case 3: Z-Index Control</h3>
+        <p>Relative positioning allows you to use the z-index property to control stacking order.</p>
+
+        <h2>Comparison: Static vs Relative</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>position: static</th>
+                <th>position: relative</th>
+            </tr>
+            <tr>
+                <td>Default?</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>In document flow?</td>
+                <td>Yes</td>
+                <td>Yes (space reserved)</td>
+            </tr>
+            <tr>
+                <td>Affected by offset properties?</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Considered "positioned"?</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Can use z-index?</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> What is the default value of the position property for HTML elements?</p>
+            <ul>
+                <li>relative</li>
+                <li><strong>static ✓</strong></li>
+                <li>absolute</li>
+                <li>fixed</li>
+            </ul>
+            <br>
+            <p><strong>Question 2:</strong> When you set position: relative and move an element with left: 50px, what happens to the space where it originally was?</p>
+            <ul>
+                <li><strong>The space is preserved; other elements don't move ✓</strong></li>
+                <li>Other elements move up to fill the space</li>
+                <li>The element is removed from the document flow</li>
+                <li>The element creates a new stacking context</li>
+            </ul>
+        </div>
+
+        <div class="nav-links" style="margin-top: 40px;">
+            <a href="position-intro.html">&larr; Previous: Introduction</a>
+            <a href="position-fixed-absolute.html">Next: Fixed & Absolute &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
