@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinators</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .nav-links {
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .demo {
+            padding: 20px;
+            border: 2px dashed #ddd;
+            margin: 15px 0;
+            background: white;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+            color: #555;
+        }
+
+        .exercise {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .exercise h3 {
+            color: #cc8800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .combinator-symbol {
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        /* Demo styles */
+        .demo-descendant div p {
+            background-color: yellow;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .demo-child div > p {
+            background-color: yellow;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .demo-next-sibling div + p {
+            background-color: yellow;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .demo-subsequent-sibling div ~ p {
+            background-color: yellow;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .demo div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f0f0f0;
+        }
+
+        .demo p {
+            margin: 5px 0;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .comparison-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Topics</a>
+            <a href="pseudo-classes.html">Next: Pseudo-classes &rarr;</a>
+        </div>
+
+        <div class="header">
+            <h1>CSS Combinators</h1>
+        </div>
+
+        <h2>What are CSS Combinators?</h2>
+        <p>A <strong>combinator</strong> is something that defines the relationship between two or more selectors.</p>
+        <p>A CSS selector can contain more than one selector. Between the selectors, we can include a combinator to create a more specific selection.</p>
+
+        <h2>The Four CSS Combinators</h2>
+        <p>There are four different combinators in CSS:</p>
+        <ul>
+            <li><strong>Descendant combinator</strong> <span class="combinator-symbol">(space)</span></li>
+            <li><strong>Child combinator</strong> <span class="combinator-symbol">&gt;</span></li>
+            <li><strong>Next sibling combinator</strong> <span class="combinator-symbol">+</span></li>
+            <li><strong>Subsequent-sibling combinator</strong> <span class="combinator-symbol">~</span></li>
+        </ul>
+
+        <h2>Descendant Combinator (space)</h2>
+        <p>The descendant combinator matches all elements that are descendants (children, grandchildren, great-grandchildren, etc.) of a specified element.</p>
+
+        <div class="example">
+            <h4>Example: Descendant Combinator</h4>
+            <p>Select all &lt;p&gt; elements inside &lt;div&gt; elements:</p>
+            <div class="code">div p {
+  background-color: yellow;
+}</div>
+            <div class="demo demo-descendant">
+                <div>
+                    <p>Paragraph 1 in the div (will be yellow)</p>
+                    <p>Paragraph 2 in the div (will be yellow)</p>
+                    <section>
+                        <p>Paragraph 3 inside section inside div (will be yellow)</p>
+                    </section>
+                </div>
+                <p>Paragraph 4 outside the div (will NOT be yellow)</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Key Point:</strong> The descendant combinator selects ALL descendants at ANY level, not just direct children.
+        </div>
+
+        <h2>Child Combinator (&gt;)</h2>
+        <p>The child combinator selects all elements that are <strong>direct children</strong> of a specified element.</p>
+
+        <div class="example">
+            <h4>Example: Child Combinator</h4>
+            <p>Select all &lt;p&gt; elements that are direct children of &lt;div&gt;:</p>
+            <div class="code">div &gt; p {
+  background-color: yellow;
+}</div>
+            <div class="demo demo-child">
+                <div>
+                    <p>Paragraph 1 in the div (direct child - will be yellow)</p>
+                    <p>Paragraph 2 in the div (direct child - will be yellow)</p>
+                    <section>
+                        <p>Paragraph 3 inside section (NOT direct child - will NOT be yellow)</p>
+                    </section>
+                </div>
+                <p>Paragraph 4 outside the div (will NOT be yellow)</p>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comparison-box">
+                <h4>Descendant (space)</h4>
+                <div class="code">div p { }</div>
+                <p>Selects ALL &lt;p&gt; elements inside &lt;div&gt; at any level</p>
+            </div>
+            <div class="comparison-box">
+                <h4>Child (&gt;)</h4>
+                <div class="code">div &gt; p { }</div>
+                <p>Selects ONLY direct &lt;p&gt; children of &lt;div&gt;</p>
+            </div>
+        </div>
+
+        <h2>Next Sibling Combinator (+)</h2>
+        <p>The next sibling combinator selects an element that is <strong>directly after</strong> a specific element.</p>
+        <p>Sibling elements must have the same parent element.</p>
+
+        <div class="example">
+            <h4>Example: Next Sibling Combinator</h4>
+            <p>Select the first &lt;p&gt; element that immediately follows a &lt;div&gt;:</p>
+            <div class="code">div + p {
+  background-color: yellow;
+}</div>
+            <div class="demo demo-next-sibling">
+                <div>This is a div</div>
+                <p>Paragraph 1 immediately after div (will be yellow)</p>
+                <p>Paragraph 2 (will NOT be yellow)</p>
+                <div>Another div</div>
+                <p>Paragraph 3 immediately after second div (will be yellow)</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>Important:</strong> The + combinator only selects the FIRST element immediately after the specified element.
+        </div>
+
+        <h2>Subsequent-sibling Combinator (~)</h2>
+        <p>The subsequent-sibling combinator selects <strong>all elements</strong> that are next siblings of a specified element.</p>
+
+        <div class="example">
+            <h4>Example: Subsequent-sibling Combinator</h4>
+            <p>Select all &lt;p&gt; elements that are next siblings of &lt;div&gt;:</p>
+            <div class="code">div ~ p {
+  background-color: yellow;
+}</div>
+            <div class="demo demo-subsequent-sibling">
+                <p>Paragraph 1 before div (will NOT be yellow)</p>
+                <div>This is a div</div>
+                <p>Paragraph 2 after div (will be yellow)</p>
+                <p>Paragraph 3 after div (will be yellow)</p>
+                <section>Section between paragraphs</section>
+                <p>Paragraph 4 after div (will be yellow)</p>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comparison-box">
+                <h4>Next Sibling (+)</h4>
+                <div class="code">div + p { }</div>
+                <p>Selects ONLY the first &lt;p&gt; immediately after &lt;div&gt;</p>
+            </div>
+            <div class="comparison-box">
+                <h4>Subsequent-sibling (~)</h4>
+                <div class="code">div ~ p { }</div>
+                <p>Selects ALL &lt;p&gt; elements that come after &lt;div&gt;</p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise</h3>
+            <p><strong>Question:</strong> Which combinator selects elements that are direct children of a specified element?</p>
+            <ul>
+                <li><strong>Child combinator (&gt;) ✓</strong></li>
+                <li>Descendant combinator (space)</li>
+                <li>Next sibling combinator (+)</li>
+                <li>Subsequent-sibling combinator (~)</li>
+            </ul>
+        </div>
+
+        <h2>CSS Combinators Summary</h2>
+        <table>
+            <tr>
+                <th>Combinator</th>
+                <th>Symbol</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Descendant</td>
+                <td>(space)</td>
+                <td>Selects all descendants at any level</td>
+            </tr>
+            <tr>
+                <td>Child</td>
+                <td>&gt;</td>
+                <td>Selects direct children only</td>
+            </tr>
+            <tr>
+                <td>Next Sibling</td>
+                <td>+</td>
+                <td>Selects the first element immediately after</td>
+            </tr>
+            <tr>
+                <td>Subsequent-sibling</td>
+                <td>~</td>
+                <td>Selects all siblings that come after</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

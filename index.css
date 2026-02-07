@@ -1,0 +1,45 @@
+/* <selector> {
+    <style>
+} */
+
+/* TAGS */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+article,
+form,
+input {
+}
+
+/* CLASSES */
+.class-name {
+  color: red;
+}
+
+/* ID */
+#id-name {
+  color: blue;
+}
+
+.items {
+  p {
+  }
+}
+
+.items p {
+}
+
+.items > p {
+}
+
+.p-to-style + p {
+}
+
+.p-to-style ~ p {
+}
