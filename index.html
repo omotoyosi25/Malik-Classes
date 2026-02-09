@@ -1,155 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Text & Font Tutorial</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Tahoma, sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Tahoma, sans-serif;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
+      .container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+      }
 
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.1em;
-        }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+      }
 
-        .topics-list {
-            list-style: none;
-        }
+      .topics-list {
+        list-style: none;
+      }
 
-        .topics-list li {
-            margin-bottom: 15px;
-        }
+      .topics-list li {
+        margin-bottom: 15px;
+      }
 
-        .topic-link {
-            display: block;
-            padding: 20px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
+      .topic-link {
+        display: block;
+        padding: 20px 25px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.1em;
+        font-weight: 500;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
 
-        .topic-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
+      .topic-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
 
-        .topic-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 15px;
-            font-weight: bold;
-        }
+      .topic-number {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 15px;
+        font-weight: bold;
+      }
 
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9em;
-        }
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #666;
+        font-size: 0.9em;
+      }
 
-
-        .items {
-            width: 100px;
-            height: 100px;
-            background-color: #667eea;
-        }
+      .items {
+        width: 100px;
+        height: 100px;
+        background-color: #667eea;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>CSS Topics</h1>
-        <p class="subtitle">Select a topic to start learning</p>
+      <h1>CSS Topics</h1>
+      <p class="subtitle">Select a topic to start learning</p>
 
-        <ul class="topics-list">
-            <li>
-                <a href="typography/index.html" class="topic-link">
-                    <span class="topic-number">1</span>
-                    Typography
-                </a>
-            </li>
-            <li>
-                <a href="positions/index.html" class="topic-link">
-                    <span class="topic-number">2</span>
-                    Positions
-                </a>
-            </li>
-            <li>
-                <a href="selectors/index.html" class="topic-link">
-                    <span class="topic-number">3</span>
-                    Selectors
-                </a>
-            </li>
-        </ul>
+      <ul class="topics-list">
+        <li>
+          <a href="typography/index.html" class="topic-link">
+            <span class="topic-number">1</span>
+            Typography
+          </a>
+        </li>
+        <li>
+          <a href="positions/index.html" class="topic-link">
+            <span class="topic-number">2</span>
+            Positions
+          </a>
+        </li>
+        <li>
+          <a href="selectors/index.html" class="topic-link">
+            <span class="topic-number">3</span>
+            Selectors
+          </a>
+        </li>
+      </ul>
 
-
-
-        <div className="items">
-            <p class="p-to-style">
-
-            </p>
-            <p>
-
-            </p>
-            <p>
-
-            </p>
-
-            <div>                
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                
-            </div>
-        </div>
-
+      <body>
+        //class-flex, flex-direction: column
+        <div></div>
+        //flex-basis:30%
+        <div></div>
+        //flex-basis:70%
+      </body>
     </div>
-</body>
-
+  </body>
 </html>

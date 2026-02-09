@@ -1,127 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Selectors Tutorial</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
+      .container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+      }
 
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.1em;
-        }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+      }
 
-        .topics-list {
-            list-style: none;
-        }
+      .topics-list {
+        list-style: none;
+      }
 
-        .topics-list li {
-            margin-bottom: 15px;
-        }
+      .topics-list li {
+        margin-bottom: 15px;
+      }
 
-        .topic-link {
-            display: block;
-            padding: 20px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-size: 1.1em;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
+      .topic-link {
+        display: block;
+        padding: 20px 25px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.1em;
+        font-weight: 500;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
 
-        .topic-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
+      .topic-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
 
-        .topic-number {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 15px;
-            font-weight: bold;
-        }
+      .topic-number {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 15px;
+        font-weight: bold;
+      }
 
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #764ba2;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
+      .back-btn {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #764ba2;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
 
-        .back-btn:hover {
-            text-decoration: underline;
+      .back-btn:hover {
+        text-decoration: underline;
+      }
+
+      .topic-link {
+        &:visited {
         }
+      }
+
+      .input {
+        &:focus {
+          border: solid 5px red;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <a href="../index.html" class="back-btn">&larr; Back to Topics</a>
-        <h1>CSS Selectors</h1>
-        <p class="subtitle">Master CSS Selection Methods</p>
-        
-        <ul class="topics-list">
-            <li>
-                <a href="combinators.html" class="topic-link">
-                    <span class="topic-number">1</span>
-                    CSS Combinators
-                </a>
-            </li>
-            <li>
-                <a href="pseudo-classes.html" class="topic-link">
-                    <span class="topic-number">2</span>
-                    Pseudo-classes
-                </a>
-            </li>
-            <li>
-                <a href="pseudo-elements.html" class="topic-link">
-                    <span class="topic-number">3</span>
-                    Pseudo-elements
-                </a>
-            </li>
-        </ul>
+      <a href="../index.html" class="back-btn">&larr; Back to Topics</a>
+      <h1>CSS Selectors</h1>
+      <p class="subtitle">Master CSS Selection Methods</p>
+
+      <ul class="topics-list">
+        <li>
+          <a href="combinators.html" class="topic-link">
+            <span class="topic-number">1</span>
+            CSS Combinators
+          </a>
+        </li>
+        <li>
+          <a href="pseudo-classes.html" class="topic-link">
+            <span class="topic-number">2</span>
+            Pseudo-classes
+          </a>
+        </li>
+        <li>
+          <a href="pseudo-elements.html" class="topic-link">
+            <span class="topic-number">3</span>
+            Pseudo-elements
+          </a>
+        </li>
+
+        <li>
+          <input type="text" class="input" />
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>

@@ -32,14 +32,19 @@ input {
   }
 }
 
-.items p {
-}
 
-.items > p {
-}
 
-.p-to-style + p {
-}
 
-.p-to-style ~ p {
-}
+
+
+/* PSEUDO CLASSES */
+:hover,
+:visited,
+:active,
+:focus,
+:target,
+:lang(en),
+:root,
+:empty,
+:matches(.class-name),
+:not(.class-name)
