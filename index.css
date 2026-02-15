@@ -14,8 +14,7 @@ div,
 span,
 article,
 form,
-input {
-}
+input {}
 
 /* CLASSES */
 .class-name {
@@ -28,8 +27,7 @@ input {
 }
 
 .items {
-  p {
-  }
+  p {}
 }
 
 
@@ -47,4 +45,18 @@ input {
 :root,
 :empty,
 :matches(.class-name),
-:not(.class-name)
+:not(.class-name) div p {}
+
+div {
+  p {}
+}
+
+
+div>p {}
+
+\
+ p:hover {}
+
+a:visited {}
+
+<div><p></p><div><p></p></div></div>:hover:active:visited:focus ::first-line - Style the first line of text ::selection - Style user-selected text ::first-letter - Style the first letter of text ::before - Insert content before an element ::after - Insert content after an element ::marker - Style list item markers

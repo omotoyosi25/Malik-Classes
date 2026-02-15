@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+            background-color: #1f1f1f;
+            border-radius: 20px;
+            width: 350px;
+        }
+
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .link {
+                text-align: center;
+                padding: 12px;
+                background-color: #2e2d2d;
+                border-radius: 10px;
+            }
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <img src="/image.png" alt="">
+
+        <div>
+
+            <h1>Jessica Randall</h1>
+            <p>London, United Kingdom.</p>
+        </div>
+
+        <div class="bottom-section">
+            <blockquote>Front-end Developer and UI/UX Designer.</blockquote>
+
+            <div class="link">Github</div>
+            <div class="link">Frontend Mentor</div>
+            <div class="link">LinkedIn</div>
+            <div class="link">Twitter</div>
+            <div class="link">Instagram</div>
+        </div>
+    </article>
+</body>
+
+</html>
