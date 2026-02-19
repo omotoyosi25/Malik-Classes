@@ -1,48 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap");
 
 body {
-    background-color: hsl(30, 18%, 87%);
-    color: hsl(24, 5%, 18%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Outfit', sans-serif;
+  background-color: hsl(30, 18%, 87%);
+  color: hsl(24, 5%, 18%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
 }
 
-h1,
 h2,
 h4,
 h5 {
-    font-family: "Young Serif", serif;
-    color: hsl(30, 10%, 34%);
+  font-family: "Young Serif", serif;
+  color: hsl(14, 45%, 36%);
+}
+
+h1 {
+  font-family: "Young Serif", serif;
+}
+
+span {
+  font-weight: 600;
 }
 
 h3 {
-    color: hsl(332, 51%, 32%);
+  color: hsl(332, 51%, 32%);
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 500px;
 }
 
 .preparation-time {
-    background-color: hsl(330, 100%, 98%);
-    border-radius: 20px;
-    padding: 20px;
+  background-color: hsl(330, 100%, 98%);
+  border-radius: 20px;
+  padding: 20px;
 
-    h3 {
-        font-size: 1.2rem;
-    }
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.preparation-time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.instructions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.instructions {
+  border-bottom: 0.5px solid black;
+}
+
+.ingredients {
+  border-bottom: 0.5px solid black;
+}
+
+.nutrition-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 0.5px solid black;
+  gap: 100px;
+}
+
+td {
+  padding: 10px;
+}
+
+td:last-child {
+  font-weight: bold;
+  color: hsl(14, 45%, 36%);
 }
 
 tr:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 /* 
