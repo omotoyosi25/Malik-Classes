@@ -1,65 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<body>
+  <body>
     <section class="left">
-        <header>
-            <h2>Registeration Process</h2>
-            <p>1/2 steps</p>
-        </header>
+      <header>
+        <h2>Registeration Process</h2>
+        <p>1/2 steps</p>
+      </header>
 
-        <ul>
-            <li>User Details</li>
-            <li>Business details</li>
-            <li>Bank Details</li>
-        </ul>
+      <ul>
+        <li>User Details</li>
+        <li>Business details</li>
+        <li>Bank Details</li>
+      </ul>
     </section>
 
-
     <main class="right">
-        <header class="right-header">
-            <h3>New Registeration form</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, at esse autem ipsa, ex hic similique
-                placeat corporis consequatur et commodi iusto perspiciatis saepe magni nulla alias id quas enim..</p>
-        </header>
+      <header class="right-header">
+        <h3>New Customer Registration form</h3>
+        <p>Fill out the following basic user details to setup your account</p>
+      </header>
 
-        <p class="badge">
-            All fields are required unless specified optional
-        </p>
+      <p class="badge">All fields are required unless specified optional</p>
 
+      <form class="inputs-container" action="">
+        <div class="forminput">
+          <label for="">Customer's Name</label>
+          <input class="form-input" type="text" placeholder="First Name" />
+        </div>
 
-        <form action="">
-            <div class="forminput">
-                <label for="">Customer's Name</label>
-                <input type="text" placeholder="First Name">
-            </div>
+        <div class="forminput">
+          <label for="">Last Name</label>
+          <input class="form-input" type="text" placeholder="Last Name" />
+        </div>
 
-            <div style="display:flex; border: solid 1px black; border-radius: 0.5rem">
-                <div style="border-right: solid 1px black">+91</div>
-                <input type="" style="appearance: none; border: none; outline: 0px;">
-            </div>
+        <div class="forminput">
+          <label for="">Email Address</label>
+          <input class="form-input" type="email" placeholder="Email Address" />
+        </div>
 
+        <div class="forminput">
+          <label for="">Phone Number</label>
+          <input class="form-input" type="tel" placeholder="Phone Number" />
+        </div>
 
+        <div class="forminput">
+          <label for="">Password</label>
+          <input class="form-input" type="password" placeholder="Password" />
+        </div>
 
-            <input type="text" placeholder="Last Name">
-            <input type="email" placeholder="Email">
-            <input type="tel" placeholder="Phone">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
-        </form>
+        <div class="forminput">
+          <label for="">Confirm Password</label>
+          <input
+            class="form-input"
+            type="password"
+            placeholder="Confirm Password"
+          />
+        </div>
+      </form>
 
-        <footer>
-            <button>Clear</button>
-            <button>Proceed Next</button>
-        </footer>
     </main>
-</body>
 
+      <footer >
+        <div class="footer-btns">
+          <button class="left-button">Clear</button>
+          <button class="right-button">Proceed Next</button>
+        </div>
+      </footer>
+
+  </body>
 </html>
