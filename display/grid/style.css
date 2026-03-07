@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    border: 1px solid #2980b9;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+
+
+/* --- STEP 1: INITIALIZE GRID & BASIC SIZING --- */
+
+
+.grid-container {
+    /* display: grid; */
+    /* grid-template-columns: 250px 1000px 250px; */
+    /* grid-template-rows: 200px 150px; */
+}
+
+
+
+/* --- STEP 2: FRACTION UNITS (fr) & REPEAT() --- */
+.grid-container {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-rows: 1fr 1fr; */
+
+}
+
+/* --- STEP 3: AUTO ROWS & MINMAX() --- */
+
+
+.grid-container {
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 150px; */
+    /* grid-auto-rows: minmax(150px, auto); */
+}
+
+.item-1 {
+    font-size: 2rem;
+}
+
+
+/* --- STEP 4: GRID GAPS --- */
+.grid-container {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+    grid-gap: 20px; */
+}
+
+
+/* --- STEP 5: GRID TEMPLATE AREAS --- */
+
+.grid-container {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px; */
+
+    /* grid-template-areas:
+        "header header header "
+        "sidebar sidebar content "
+        "sidebar sidebar content "
+        "item4 item5 item5 "
+        "footer footer footer "; */
+}
+
+
+
+
+
+.item-1 {
+    /* grid-area: header; */
+    background: red
+}
+
+.item-2 {
+    /* grid-area: sidebar; */
+}
+
+.item-3 {
+    /* grid-area: content; */
+}
+
+.item-4 {
+    /* grid-area: item4; */
+}
+
+.item-5 {
+    /* grid-area: item5; */
+}
+
+.item-6 {
+    /* grid-area: footer; */
+}
+
+/* --- STEP 6: LINE-BASED PLACEMENT & SPANNING --- */
+
+.grid-container {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    grid-gap: 15px; */
+}
+
+.item-1 {
+    /* grid-column-start: 1;
+grid-column-end: 3;
+
+grid-column: 1 / 3;
+grid-column: 1 / -1;  */
+}
+
+.item-2 {
+    /* grid-row: span 2;
+    background-color: #e74c3c; */
+}
+
+.item-3 {
+    /* grid-column: span 2; */
+}
+
+
+/* --- STEP 7: ALIGNMENT & JUSTIFICATION (CONTAINER) --- */
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    height: 100vh;
+
+    background-color: #ddd;
+
+    /* justify-content: center; */
+
+    /* align-content: center; */
+
+}
+
+
+/* --- STEP 8: ALIGNMENT & JUSTIFICATION (ITEMS) --- */
+
+.grid-container {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    grid-gap: 10px; */
+
+
+    /* justify-items: center; */
+    /* align-items: center; */
+}
+
+.item-1 {
+    /* justify-self: start;
+    align-self: start;
+    background-color: #2ecc71; */
+}
+
+.item-2 {
+    /* justify-self: stretch;
+    align-self: end;
+    background-color: #9b59b6; */
+}
