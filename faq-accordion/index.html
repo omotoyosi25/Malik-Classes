@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | FAQ accordion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .font-work-sans {
+      font-family: "Work Sans", sans-serif;
+      font-optical-sizing: auto;
+    }
+
+    summary::marker {
+      content: "";
+    }
+  </style>
+</head>
+
+<body class="flex flex-col bg-cover bg-no-repeat h-screen font-work-sans">
+  <div
+    class="bg-[url('./assets/images/background-pattern-mobile.svg')] md:bg-[url('./assets/images/background-pattern-desktop.svg')] basis-[40%]">
+  </div>
+  <div class="basis-[60%] bg-[hsl(275,100%,97%)]"> </div>
+
+
+  <h1 class>
+    Bienvenido, <span class="textpred">Luccia</span>
+  </h1>
+
+  <div class="absolute inset-0 z-2 flex items-center justify-center">
+    <div class=" bg-white p-5 md:p-6 rounded-md  w-[90vw] max-w-[600px] mx-auto shadow-sm">
+      <h1 class="font-bold text-4xl md:text-5xl">
+        FAQs
+      </h1>
+
+      <ul class="flex flex-col gap-4 divide-y">
+        <li>
+          <details class="py-2.5">
+            <summary class="font-semibold cursor-pointer">What is Frontend Mentor, and how will it help me?</summary>
+            <span class="text-[hsl(292,16%,49%)] text-sm">
+
+              Frontend Mentor offers realistic coding challenges to help developers improve their
+              frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+              all levels and ideal for portfolio building.
+            </span>
+          </details>
+        </li>
+        <li>
+          <details class="py-2.5">
+            <summary class="font-semibold cursor-pointer">Is Frontend Mentor free?</summary>
+            <span class="text-[hsl(292,16%,49%)] text-sm">
+
+              Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+              option providing access to a range of projects suitable for all skill levels.
+            </span>
+          </details>
+        </li>
+        <li>
+          <details class="py-2.5">
+            <summary class="font-semibold cursor-pointer">Can I use Frontend Mentor projects in my portfolio?</summary>
+            <span class="text-[hsl(292,16%,49%)] text-sm">
+              Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an
+              excellent way to showcase your skills to potential employers!
+            </span>
+          </details>
+        </li>
+        <li>
+          <details class="py-2.5">
+            <summary class="font-semibold cursor-pointer">How can I get help if I'm stuck on a Frontend Mentor
+              challenge?</summary>
+            <span class="text-[hsl(292,16%,49%)] text-sm">
+              The best place to get help is inside Frontend Mentor's Discord community. There's a
+              help channel where you can ask questions and seek support from other community
+              members.
+            </span>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+
+</html>
