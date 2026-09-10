@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.calculator{
+    width: 350px;
+    margin: 50px auto;
+    background-color: #1e1e2e;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+}
+.display {
+    background-color: #111111;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    min-height: 8rem;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.btn{
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #313244;
+    color: white;
+}
