@@ -38,3 +38,16 @@
     background-color: #313244;
     color: white;
 }
+
+.history{
+    color: white;
+    margin-top: 1.25rem;
+    padding:0.5rem;
+    border: 0.6px solid white;
+    border-radius: 0.5rem;
+
+    ul{
+        list-style-type: none;
+        padding-left: 0.2rem;
+    }
+}
