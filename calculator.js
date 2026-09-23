@@ -1,117 +1,94 @@
-const displayElem = document.querySelector(".display");
-const buttonsElem = document.querySelector(".buttons");
+// let, const
+//variables are like labelled boxes that hold value/items
+let name = "Khalid";
+name = "New Name";
 
-let currentValue = "0";
-let previousValue = "";
-let justEvaluatedValue = "";
-let operation = null;
-let history = [];
+//make a variable constant
+const age = 30;
+const Age = 12;
 
-const updateDisplay = () => {
-  displayElem.textContent = currentValue;
-};
+const dateOfBirth = "01/01/1990";
+const date_of_birth = "01/01/1990";
 
-buttonsElem.addEventListener("click", (e) => {
-  const targetElement = e.target;
+//data types/value types
+let myName = "Khalid"; //string
+console.log(typeof myName);
 
-  if (targetElement.dataset.value !== undefined) {
-    if (currentValue.includes(".") && targetElement.dataset.value === ".") {
-      return;
-    } else {
-      handleNumberClick(targetElement.dataset.value);
-    }
-  } else if (targetElement.dataset.operation == "clear") {
-    handleClearClick();
-  } else if (targetElement.dataset.operation == "equals") {
-    handleEqualsClick();
-  } else {
-    handleOperationClick(targetElement.dataset.operation);
-  }
+let myAge = 30.1; //number
+console.log(typeof myAge);
 
-  updateDisplay();
-});
+let isMarried = false; //boolean (true or false)
+console.log(typeof isMarried);
 
-const calculate = (op, prev, current) => {
-  switch (op) {
-    case "add":
-      return prev + current;
-    case "subtract":
-      return prev - current;
-    case "multiply":
-      return prev * current;
-    case "divide":
-      return prev / current;
-    default:
-      return 0;
-  }
-};
+let myAddress = null; //null
+console.log(typeof myAddress);
 
-const handleNumberClick = (number) => {
-  if (currentValue === "0") {
-    currentValue = number;
-  } else {
-    currentValue = currentValue + number;
-  }
-};
+let myPhoneNumber = undefined; //undefined
+console.log(typeof myPhoneNumber);
 
-const handleClearClick = () => {
-  currentValue = "0";
-  previousValue = "";
-  operation = null;
-};
+let newVariable;
+console.log(typeof newVariable); //undefined
 
-const handleOperationClick = (op) => {
-  if (previousValue !== "" && currentValue !== "") {
-    const prev = parseFloat(previousValue);
-    const current = parseFloat(currentValue);
-    const result = calculate(op, prev, current);
-    console.log("result", result);
-    previousValue = result.toString();
-    currentValue = "0";
-  } else {
-    previousValue = currentValue;
-    operation = op;
-    currentValue = "0";
-  }
-};
+// NaN - not a number, trying to perform mathematical operations on invalid figues or string etc
 
-const handleEqualsClick = () => {
-  const prev = parseFloat(previousValue);
-  const current = parseFloat(currentValue);
+// '', "", ``
+const newName = "Name";
+const newName2 = "Name2";
+const nameWithBackticks = `Name3`;
 
-  const result = calculate(operation, prev, current);
-  currentValue = result.toString();
+//Maths  +, -, *, /
+let firstName = "Khalid";
+let LastName = "Ahmed";
 
-  // CHECK IF THE HISTORY ARRAY ALREADY CONTAINS 10 ITEMS
-  // .pop()
+console.log(firstName + " " + LastName); //concatenation
+const age2 = 20;
+console.log(age2 + firstName);
 
-  history.push({
-    previousValue: previousValue,
-    operation: operation,
-    currentValue: currentValue,
-    result: result.toString(),
-  });
-  showHistory();
-};
+const num1 = "5000";
+const num2 = 10;
 
-const showHistory = () => {
-  console.log(history);
-  const hitoryListElem = document.querySelector(".history-list");
-  hitoryListElem.innerHTML = "";
-  history.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = `${item.previousValue} ${item.operation} ${item.currentValue} = ${item.result}`;
-    hitoryListElem.appendChild(li);
-    li.style.color = "white";
-    li.classList.add("history-item");
-  });
-};
+console.log(num1 - num2);
 
+//Comparison Operators:- ==, === return either true, false, >, <, >=, <=, !=, !==
+let name1 = "Ade";
+let name2 = "Adex";
+console.log(name1 == name2);
 
+console.log(10 > 5, "10 is greater than 5");
+console.log(12 < 3, "12 is greater than 3");
 
-//select clear history, create a clear history fn, add click event listener 
+console.log(name1 != name2, "Name 1 is not equal to Name2");
+console.log(1, "q", "nnn", true, undefined);
 
+let agee = 18;
+const votingAge = 18;
 
-// add a key down event 
-//document.eventListener (check if key is ESC key)
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+console.log(agee <= votingAge, "Agee is greater than or equals to votingAge");
+
+//Logcal Operators  ||(OR), &&(AND), !(NOT)
+const isAuthorized = name2 == "Adex" || votingAge > 200000;
+
+const studentName = "Ada";
+const HasParentConsent = true;
+const studentAge = 19;
+const studentHasPaid = true;
+const consentORNotMinor = HasParentConsent && studentAge > 18;
+console.log(consentORNotMinor && studentHasPaid, "Student verioeg");
+
+//Conditionals - if else
+let temperature = 30;
+const isHumid = false;
+
+if (temperature >= 30 && isHumid) {
+  console.log("It's hot and humid outside");
+} else if (temperature >= 30 && !isHumid) {
+  console.log("It's hot but not humid outside");
+} else {
+  console.log("It's not hot");
+}
+
+// username, password
+//correctUsername, correctPassword
+// wrote and if/else statement that check if username and correctUername match
+// AND password and correctPassword match
+// log ("Access granted!")
