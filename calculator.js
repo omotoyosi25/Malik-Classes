@@ -92,3 +92,32 @@ if (temperature >= 30 && isHumid) {
 // wrote and if/else statement that check if username and correctUername match
 // AND password and correctPassword match
 // log ("Access granted!")
+
+
+
+
+const username = "Khalid";
+const password = "123456";
+const correctUsername = "Khalid";
+const correctPassword = "123456";
+const isAccountActive = true;
+const isUserNameCorrect = username === correctUsername;
+const isPasswordCorrect = password === correctPassword;
+
+if (username === correctUsername && password === correctPassword) {
+  console.log("Access granted!");
+} else if (isUserNameCorrect && !isPasswordCorrect) {
+  console.log("Incorrect password!");
+} else if (!isUserNameCorrect && isPasswordCorrect) {
+  console.log("Incorrect username!");
+} else if (isUserNameCorrect && isAccountActive) {
+  console.log("Account is active!");
+} else if (!isUserNameCorrect && !isPasswordCorrect) {
+  console.log("Incorrect username and password!");
+} else if (isUserNameCorrect && isPasswordCorrect && !isAccountActive) {
+  console.log("Account is not active!");
+}
+ else {
+  console.log("Access denied!");
+}
+
