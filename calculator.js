@@ -6,6 +6,7 @@ name = "New Name";
 //make a variable constant
 const age = 30;
 const Age = 12;
+let un;
 
 const dateOfBirth = "01/01/1990";
 const date_of_birth = "01/01/1990";
@@ -93,9 +94,6 @@ if (temperature >= 30 && isHumid) {
 // AND password and correctPassword match
 // log ("Access granted!")
 
-
-
-
 const username = "Khalid";
 const password = "123456";
 const correctUsername = "Khalid";
@@ -104,7 +102,11 @@ const isAccountActive = true;
 const isUserNameCorrect = username === correctUsername;
 const isPasswordCorrect = password === correctPassword;
 
-if (username === correctUsername && password === correctPassword) {
+if (
+  username === correctUsername &&
+  password === correctPassword &&
+  isAccountActive
+) {
   console.log("Access granted!");
 } else if (isUserNameCorrect && !isPasswordCorrect) {
   console.log("Incorrect password!");
@@ -116,8 +118,59 @@ if (username === correctUsername && password === correctPassword) {
   console.log("Incorrect username and password!");
 } else if (isUserNameCorrect && isPasswordCorrect && !isAccountActive) {
   console.log("Account is not active!");
-}
- else {
+} else {
   console.log("Access denied!");
 }
+
+let score1 = 90;
+let score2 = 60;
+
+function sayHi() {
+  console.log("Hi, welcome!");
+  return "Hi";
+}
+
+function sayHiName(name, age) {
+  console.log(`Hi welcome ${name}. You are ${age} years old`);
+}
+
+sayHiName("Ade", 20);
+sayHiName("Lola", 35);
+
+function gradeScore(score) {
+  if (score <= 40) {
+    console.log("score is F");
+    return "F";
+  } else if (score <= 50) {
+    console.log("score is D");
+    return "D";
+  } else if (score <= 60) {
+    console.log("score is C");
+    return "C";
+  } else if (score <= 60) {
+    console.log("score is B");
+    return "B";
+  } else {
+    console.log("score is A");
+    return "A";
+  }
+}
+
+const gradeOf86 = gradeScore(30);
+console.log(gradeOf86, "gradeOf86");
+
+function calculateTotalPrice(quantity, price) {
+  console.log(quantity * price);
+  return quantity * price;
+}
+const itemPrice = 6000;
+const itemQuantity = 6;
+
+const totalPrice = calculateTotalPrice(itemQuantity, itemPrice);
+
+//create a function with 4 parameter : username, password, confirmPassword, isActive
+// inside the function create a variable called correctUsername
+// check if input username is equal to the corredct username
+// check if password and confirmPassword match
+// check if isActive is true
 

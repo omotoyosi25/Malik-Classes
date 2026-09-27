@@ -31,7 +31,7 @@ buttonsElem.addEventListener("click", (e) => {
   updateDisplay();
 });
 
-const calculate = (op, prev, current) => {
+function calculate  (op, prev, current){
   switch (op) {
     case "add":
       return prev + current;
