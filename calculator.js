@@ -168,9 +168,66 @@ const itemQuantity = 6;
 
 const totalPrice = calculateTotalPrice(itemQuantity, itemPrice);
 
+
+
+// LOOPS
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet("Hello User 1");
+greet("Bob");
+greet("Charlie");
+greet("David");
+greet("Eve");
+greet("Frank");
+
+//FOR LOOP
+// for (let i = 0; i < 5; i++) {
+//   greet(`User ${i + 1}`);
+// }
+
+// let i = 1
+// i = i + 1 = i++
+
+//WHILE LOOP
+let i = 0;
+while (i < 5) {
+  greet(`User ${i + 1}`);
+  i++;
+}
+
+let number = 100;
+while (number >= 0) {
+  console.log(number);
+  number = number - 10;
+}
+
+let balance = 5500;
+let month = 1
+while (month <= 12) {
+  if (balance < 5000) {
+    balance = balance - 2;
+    console.log(`Fees charged for month ${month}, balance: ${balance}`)
+  }
+  else if (month == 5){
+    balance = balance - 1000;
+    console.log("Spent 1k on shopping")
+  }
+  else {
+    console.log(`No fees charged for month ${month}`)
+
+  }
+
+  month++;
+}
+
+
+
 //create a function with 4 parameter : username, password, confirmPassword, isActive
 // inside the function create a variable called correctUsername
 // check if input username is equal to the corredct username
 // check if password and confirmPassword match
 // check if isActive is true
+
 
