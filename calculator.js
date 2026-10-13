@@ -169,6 +169,26 @@ const itemQuantity = 6;
 const totalPrice = calculateTotalPrice(itemQuantity, itemPrice);
 
 
+//create a function with 4 parameter : username, password, confirmPassword, isActive
+// inside the function create a variable called correctUsername
+// check if input username is equal to the corredct username
+// check if password and confirmPassword match
+// check if isActive is true
+
+
+
+function login(username, password, confirmPassword, isActive) {
+  const correctUsername = "Khalid";
+
+  if (username === correctUsername && password === confirmPassword && isActive === true) {
+
+    return "Login successful!";
+  } else {
+    return "Login failed!";
+  }
+}
+
+
 
 // LOOPS
 function greet(name) {
@@ -229,5 +249,4 @@ while (month <= 12) {
 // check if input username is equal to the corredct username
 // check if password and confirmPassword match
 // check if isActive is true
-
 
