@@ -1,6 +1,6 @@
 // let, const
 //variables are like labelled boxes that hold value/items
-let name = "Khalid";
+let nameeeeeee = "Khalid";
 name = "New Name";
 
 //make a variable constant
@@ -33,7 +33,6 @@ console.log(typeof newVariable); //undefined
 // NaN - not a number, trying to perform mathematical operations on invalid figues or string etc
 
 // '', "", ``
-const newName = "Name";
 const newName2 = "Name2";
 const nameWithBackticks = `Name3`;
 
@@ -224,29 +223,201 @@ while (number >= 0) {
 }
 
 let balance = 5500;
-let month = 1
+let month = 1;
 while (month <= 12) {
   if (balance < 5000) {
     balance = balance - 2;
-    console.log(`Fees charged for month ${month}, balance: ${balance}`)
-  }
-  else if (month == 5){
+    console.log(`Fees charged for month ${month}, balance: ${balance}`);
+  } else if (month == 5) {
     balance = balance - 1000;
-    console.log("Spent 1k on shopping")
-  }
-  else {
-    console.log(`No fees charged for month ${month}`)
-
+    console.log("Spent 1k on shopping");
+  } else {
+    console.log(`No fees charged for month ${month}`);
   }
 
   month++;
 }
 
+function trackSavings(initialBalance, monthlyDeposit, savingsGoal) {
+  let currentBalance = initialBalance;
+
+  for (let month = 1; month <= 24; month++) {
+    currentBalance = currentBalance + monthlyDeposit;
+    console.log(`Month ${month}: Current Balance: ${currentBalance}`);
+
+    if (currentBalance >= savingsGoal) {
+      console.log(
+        "Congratulations! You have reached your savings goal of $1000.",
+      );
+      return month;
+    } else {
+      console.log("Keep saving: You haven't hit your goal");
+    }
+  }
+}
+
+const howLong100To5000 = trackSavings(40, 500, 5000);
+console.log(howLong100To5000, "howLong100To5000");
+const howLong3500To50000 = trackSavings(450, 3500, 50000);
+console.log(howLong3500To50000, "howLong3500To50000");
+
+//OBJECTS
+{
+  key: "value";
+}
+
+const newName = "New Name";
+const newAge = 40;
+const newDOB = "1962-02-09";
+
+const person = {
+  name: "Adelabu",
+  age: 42,
+  dob: "1962-02-09",
+  is_active: true,
+};
+console.log(person.age);
+
+function AboutPerson(person) {
+  console.log(
+    `This person is ${person.name}, they were born on ${person.dob} they are ${person.age} years old`,
+  );
+}
+
+console.log(person["dob"], "name");
+
+person.fav_quote = "blablabla"; //  add new key
+person.name = "James"; // update existing key
+person["fav_color"] = "Blue"; // update existing key
+
+person.accounts = {
+  savings: 10000,
+  current: 1000000,
+  bank: {
+    name: "Bank",
+  },
+  print_balance: function () {
+    console.log(person.accounts.savings, "This is your savings balance");
+  },
+};
+
+console.log(person);
+person.accounts.print_balance();
+
+console.log("uuuyy".toUpperCase());
+
+const account = {
+  name: "Ada",
+  balance: 500,
+  monthly_savings: 200,
+  saving_goal: 1_000_000,
+};
+
+const account2 = {
+  name: "Ayo",
+  balance: 1000,
+  monthly_savings: 1_000_000,
+  saving_goal: 10_000_000,
+};
+
+function trackSavingsWithObject(account) {
+  for (let monthh = 1; monthh <= 24; monthh++) {
+    account.balance = account.balance + account.monthly_savings;
+
+    if(account.balance >= account.saving_goal){
+        console.log(
+        `Congratulations! You have reached your savings goal of ${account.saving_goal}`,
+        account.name
+      );
+      break;
+    }
+    else if(month==24 && account.balance < account.saving_goal){
+      console.log("Sorry, you never attained your goals", account.name)
+      break;
+    }
+  }
+}
 
 
-//create a function with 4 parameter : username, password, confirmPassword, isActive
-// inside the function create a variable called correctUsername
-// check if input username is equal to the corredct username
-// check if password and confirmPassword match
-// check if isActive is true
+const xxx =trackSavingsWithObject(account)
+trackSavingsWithObject(account2)
 
+
+
+
+
+
+//Create a function called getAccountSummary
+// first call trackSavingsWithObject, add a return statement true or false to the if/else block
+// if account reaches their savings goal add a key to the account object called
+// "milestone_achieved" the log a summary of the acccount details with that milestone
+
+
+
+function getAccountSummary(account) {
+  const milestone = trackSavingsWithObject(account);
+
+  if (milestone) {
+    account.milestone_achieved = true;
+
+    console.log("Account Summary:", {
+      name: account.name,
+      balance: account.balance,
+      monthly_savings: account.monthly_savings,
+      saving_goal: account.saving_goal,
+      milestone_achieved: account.milestone_achieved,
+    });
+  } else {
+    account.milestone_achieved = false;
+
+    console.log("Account Summary:", {
+      name: account.name,
+      balance: account.balance,
+      monthly_savings: account.monthly_savings,
+      saving_goal: account.saving_goal,
+      milestone_achieved: account.milestone_achieved,
+    });
+  }
+
+  return milestone;
+}
+
+getAccountSummary(account);
+getAccountSummary(account2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ARRAYS
+// 1, "sr", true | false,  {name: "Ade"}
+
+let nname = "Bayo";
+const newArr = ["Bayo", 5, true, { name: "Ayo" }];
