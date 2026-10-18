@@ -167,27 +167,25 @@ const itemQuantity = 6;
 
 const totalPrice = calculateTotalPrice(itemQuantity, itemPrice);
 
-
 //create a function with 4 parameter : username, password, confirmPassword, isActive
 // inside the function create a variable called correctUsername
 // check if input username is equal to the corredct username
 // check if password and confirmPassword match
 // check if isActive is true
 
-
-
 function login(username, password, confirmPassword, isActive) {
   const correctUsername = "Khalid";
 
-  if (username === correctUsername && password === confirmPassword && isActive === true) {
-
+  if (
+    username === correctUsername &&
+    password === confirmPassword &&
+    isActive === true
+  ) {
     return "Login successful!";
   } else {
     return "Login failed!";
   }
 }
-
-
 
 // LOOPS
 function greet(name) {
@@ -276,7 +274,7 @@ const person = {
   dob: "1962-02-09",
   is_active: true,
 };
-console.log(person.age);
+console.log(person.age, person["age"]);
 
 function AboutPerson(person) {
   console.log(
@@ -324,35 +322,26 @@ function trackSavingsWithObject(account) {
   for (let monthh = 1; monthh <= 24; monthh++) {
     account.balance = account.balance + account.monthly_savings;
 
-    if(account.balance >= account.saving_goal){
-        console.log(
+    if (account.balance >= account.saving_goal) {
+      console.log(
         `Congratulations! You have reached your savings goal of ${account.saving_goal}`,
-        account.name
+        account.name,
       );
       break;
-    }
-    else if(month==24 && account.balance < account.saving_goal){
-      console.log("Sorry, you never attained your goals", account.name)
+    } else if (month == 24 && account.balance < account.saving_goal) {
+      console.log("Sorry, you never attained your goals", account.name);
       break;
     }
   }
 }
 
-
-const xxx =trackSavingsWithObject(account)
-trackSavingsWithObject(account2)
-
-
-
-
-
+const xxx = trackSavingsWithObject(account);
+trackSavingsWithObject(account2);
 
 //Create a function called getAccountSummary
 // first call trackSavingsWithObject, add a return statement true or false to the if/else block
 // if account reaches their savings goal add a key to the account object called
 // "milestone_achieved" the log a summary of the acccount details with that milestone
-
-
 
 function getAccountSummary(account) {
   const milestone = trackSavingsWithObject(account);
@@ -389,35 +378,88 @@ getAccountSummary(account2);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //ARRAYS
 // 1, "sr", true | false,  {name: "Ade"}
+const exampleArr = ["EXAMPLE", 1, true, { name: "Ade" }];
+console.log(exampleArr.includes("EXAMPLESSSS"), "exampleArr contains EXAMPLE");
 
-let nname = "Bayo";
-const newArr = ["Bayo", 5, true, { name: "Ayo" }];
+const song1 = {
+  title: "Song 1",
+  artist: "Artist 1",
+  duration: 180,
+};
+
+const song2 = {
+  title: "Song 2",
+  artist: "Artist 2",
+  duration: 200,
+};
+song1.date_released = "2022-01-01";
+
+const playlist = [
+  {
+    title: "Song 1",
+    artist: "Artist 1",
+    duration: 180,
+  },
+  {
+    title: "Song 2",
+    artist: "Artist 2",
+    duration: 200,
+  },
+  {
+    title: "Song 3",
+    artist: "Artist 3",
+    duration: 120,
+  },
+  {
+    title: "Song 4",
+    artist: "Artist 4",
+    duration: 240,
+  },
+  {
+    title: "Song 5",
+    artist: "Artist 5",
+    duration: 300,
+  },
+];
+
+console.log(playlist[1].artist, "playlist");
+
+playlist.push({
+  title: "Song 6",
+  artist: "Artist 6",
+  duration: 150,
+});
+
+//METHODS AND PROPERTIES
+console.log(playlist.length, "number of songs in playlist"); //this is a property of the array
+console.log(playlist, "songs in playlist"); //this is a property of the array
+console.log("malik".toUpperCase()); // this is a method
+
+playlist.pop(); //removes the last item in the array
+console.log(
+  playlist.length,
+  "number of songs in playlist after removing an item",
+);
+
+playlist.slice(0, 3);
+console.log(playlist.slice(0, 3), "first 3 songs in playlist");
+
+// map, some, reduce, forEach, filter, find, findIndex, includes, indexOf, slice, splice, sort, reverse
+// there are method that mutate the OG array and there are others that don't
+
+function totalDuration(playlist) {
+  let duration = 0;
+
+  for (let i = 0; i < playlist.length; i++) {
+    duration =  duration + playlist[i].duration;
+  }
+
+  return duration
+}
+
+
+console.log(totalDuration(playlist), "TOTAL DUR")
+
+
