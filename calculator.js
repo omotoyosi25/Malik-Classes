@@ -374,10 +374,6 @@ function getAccountSummary(account) {
 getAccountSummary(account);
 getAccountSummary(account2);
 
-
-
-
-
 //ARRAYS
 // 1, "sr", true | false,  {name: "Ade"}
 const exampleArr = ["EXAMPLE", 1, true, { name: "Ade" }];
@@ -453,13 +449,152 @@ function totalDuration(playlist) {
   let duration = 0;
 
   for (let i = 0; i < playlist.length; i++) {
-    duration =  duration + playlist[i].duration;
+    duration = duration + playlist[i].duration;
   }
 
-  return duration
+  return duration;
 }
 
+console.log(totalDuration(playlist), "TOTAL DUR");
 
-console.log(totalDuration(playlist), "TOTAL DUR")
+//ARROW FUNCTIONS
+function add(a, b) {
+  return a + b;
+}
+
+function addTax(price) {
+  return price * 0.75;
+}
+
+const add2 = (a, b) => {
+  return a + b;
+};
+
+//you can remove the parenthesis if the fn has only one paramter
+const add3 = (a, b) => a + b;
+
+const addTax2 = (price) => price * 0.75;
+
+function newfnold() {}
+const newfn = () => {};
+const newfn2 = () => console.log("oo");
+const newfn3 = (x) => console.log("oo", x);
+
+const cartItems = [2500, 300, 11.5, 250];
+const cart2Items = [1500, 1300, 700, 30.5, 250];
+
+const applyDiscount = (price) => {
+  return price * 0.75;
+};
+
+const applyDiscountToAllItems = (prices) => {
+  let newPrices = [];
+  for (let i = 0; i < prices.length; i++) {
+    const currentPrice = prices[i];
+    const newPrice = applyDiscount(currentPrice);
+    newPrices.push(newPrice);
+  }
+
+  return newPrices;
+};
+
+const newCartItems = applyDiscountToAllItems(cartItems);
+const newCart2Items = applyDiscountToAllItems(cart2Items);
+console.log(newCartItems, "newCartItems");
+console.log(newCart2Items, "newCart2Items");
+
+const applyDiscountToAllItems2 = (prices) => {
+  let newPrices = [];
+  prices.forEach((price) => {
+    const newPrice = applyDiscount(price);
+    newPrices.push(newPrice);
+  });
+
+  return newPrices;
+};
+
+const calculatorElem = document.querySelector(".calculator");
+
+const videos = [
+  {
+    title: "PPP",
+    subtile: "ppp",
+    date: "kk",
+    channel: "llll",
+  },
+  {
+    title: "PPP",
+    subtile: "ppp",
+    date: "kk",
+    channel: "llll",
+  },
+  {
+    title: "Video 3",
+    subtile: "ppp",
+    date: "kk",
+    channel: "llll",
+  },
+  {
+    title: "Video 4",
+    subtile: "ppp",
+    date: "kk",
+    channel: "llll",
+  },
+];
+
+videos.map((video) => {
+  const card = document.createElement("div");
+  card.style.backgroundColor = "red";
+  card.style.padding = "40px";
+
+  const headerElem = document.createElement("header");
+  headerElem.textContent = video.title;
+  card.appendChild(headerElem);
+  calculatorElem.appendChild(card);
+
+  // return (
+  //   <div></div>
+  // )
+});
+
+const flteredItems = cartItems.filter((item) => item > 200);
+console.log(flteredItems, "flteredItems");
+
+// some, every
+const isEVeryItemOver200 = cartItems.every((item) => item > 200);
+const isSomeItemOver200 = cartItems.some((item) => item > 200);
 
 
+
+
+
+const trips = [
+  {
+    trip: "Abuja To Kaduna",
+    driver: "Ademide Okanlawon",
+    distance: 400
+  },
+  {
+    trip: "Lagos To Ibadan",
+    driver: "Ibrahim Babangida",
+    distance: 200
+  },
+  {
+    trip: "AKure to Ijebu",
+    driver: "Olawale Olawale",
+    distance: 300
+  }
+]
+
+const DriversForTripsLongerThan200km = 
+trips
+.filter((trip) => trip.distance > 200)
+.map((trip) => trip.driver)
+.every((driver) => driver === "Ademide Okanlawon");
+
+
+console.log(DriversForTripsLongerThan200km, "DriversForTripsLongerThan200km");
+
+
+
+//ASSIGNMENT
